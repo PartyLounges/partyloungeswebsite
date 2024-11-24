@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+.container {
+  padding-left: 5%; /* Default mobile padding */
+  padding-right: 5%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 8%; /* Tablet padding */
+    padding-right: 8%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 10%; /* Desktop padding */
+    padding-right: 10%;
+  }
+}
