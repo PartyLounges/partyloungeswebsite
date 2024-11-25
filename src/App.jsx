@@ -1,35 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './index.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="container mx-auto bg-theme-white p-5p tablet:p-8p desktop:p-10p">
+      <h1 className="text-2xl font-red-hat-display">Welcome</h1>
+      <h2 className="text-xl">Section Title</h2>
+      <h3 className="text-lg">Subheading</h3>
+      <h4 className="text-base">Minor Heading</h4>
+      <p>This is a paragraph with custom text styling.</p>
+      <ul>
+        <li>First bullet point</li>
+        <li>Second bullet point</li>
+      </ul>
+      <ol>
+        <li>First numbered point</li>
+        <li>Second numbered point</li>
+      </ol>
+      <a href="#" className="hover:bg-theme-brown hover:text-theme-white">
+        Read More
+      </a>
+    </div>
+  );
 }
 
 export default App
