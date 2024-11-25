@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      spacing: {
+        "menu-width": "14rem",
+        "menu-padding": "2rem",
+      },
       fontFamily: {
         'red-hat-display': ['Red Hat Display', 'sans-serif'],
       },
@@ -14,6 +18,7 @@ export default {
         'theme-brown': '#7C6344',
         'theme-white': '#ffffff',
         'theme-black': '#000000',
+        // "light-brown": "#f5e9df",
       },
       padding: {
         // Logical padding for mobile-first design

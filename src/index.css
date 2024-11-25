@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import 'swiper/swiper-bundle.min.css'; */
 
 body {
   margin: 0;
@@ -25,4 +26,63 @@ body {
     padding-left: 10%; /* Desktop padding */
     padding-right: 10%;
   }
+}
+
+/* Ensure the previous button is white */
+.swiper-button-prev {
+  color: white !important; 
+  font-size: 2rem; 
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent; 
+  border: none; 
+}
+
+/* Ensure the next button is white */
+.swiper-button-next {
+  color: white !important; 
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent; 
+  border: none; 
+}
+
+/* Adjust hover states for better interaction */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: white !important; 
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* Remove default Swiper blue focus styles on buttons */
+.swiper-button-prev:focus,
+.swiper-button-next:focus {
+  outline: none;
+  color: white !important; /* Retain white color on focus */
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: white !important;
+  font-size: 2rem;
+}
+
+.swiper-pagination-bullet {
+  background-color: white !important;
+  width: 12px; 
+  height: 12px; 
+  opacity: 1;
+  transition: transform 0.3s ease;
+}
+
+/* Highlight the active dot */
+.swiper-pagination-bullet-active {
+  background-color: white !important; /* Keep the active dot white */
+  transform: scale(1.2); /* Enlarge active dot slightly */
+}
+
+.swiper-pagination-bullet:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
 }
