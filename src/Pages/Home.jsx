@@ -1,9 +1,12 @@
 import React from 'react'
+import Navbar from '../Components/Navbar/Navbar'
+import Slider from '../Components/Navbar/Slider'
 
 function Home() {
     return (
         <div>
-            <h1>This is the Home page</h1>
+          <Navbar />
+          <Slider />
         </div>
     )
 }
