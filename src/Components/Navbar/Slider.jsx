@@ -32,33 +32,34 @@ const Slider = () => {
   ];
 
   return (
-    <Swiper
-      modules={[Navigation, Pagination]}
-      navigation
-      pagination={{ clickable: true }}
-      spaceBetween={30}
-      slidesPerView={1}
-      loop={true}
-      className="w-full h-[60vh]"
-    >
-      {slides.map((slide, index) => (
-        <SwiperSlide key={index} className="relative">
-          {/* Light Brown Overlay. Temporarily removed */}
-          <div className="absolute inset-0 bg-light-brown/40 z-10"></div> {/* Semi-transparent overlay */}
-          <img
-            src={slide.image}
-            alt={`Slide ${index}`}
-            className="w-full h-screen object-cover"
-          />
-          {/* Text Content */}
-          <div className="absolute inset-0 flex items-center justify-center z-20">
-            <h2 className="text-white text-lg md:text-xl font-bold px-4 text-center">
-              {slide.text}
-            </h2>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className="w-full relative">
+      <Swiper
+        modules={[Navigation, Pagination]}
+        navigation
+        pagination={{ clickable: true }}
+        spaceBetween={30}
+        slidesPerView={1}
+        loop={true}
+        className="w-full h-[65vh] md:h-[80vh] pb-20" // Padding Bottom directly on the Swiper
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index} className="relative">
+            {/* Image */}
+            <img
+              src={slide.image}
+              alt={`Slide ${index}`}
+              className="w-full h-full object-cover"
+            />
+            {/* Text Content */}
+            <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+              <h2 className="text-white text-lg md:text-2xl font-bold px-4 text-center">
+                {slide.text}
+              </h2>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
 
