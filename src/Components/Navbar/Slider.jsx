@@ -3,9 +3,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/autoplay"; // Import autoplay CSS
 
 // Import Swiper modules
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules"; // Add Autoplay module
 
 const Slider = () => {
   const slides = [
@@ -34,13 +35,17 @@ const Slider = () => {
   return (
     <div className="w-full relative">
       <Swiper
-        modules={[Navigation, Pagination]}
+        modules={[Navigation, Pagination, Autoplay]} 
         navigation
         pagination={{ clickable: true }}
         spaceBetween={30}
         slidesPerView={1}
         loop={true}
-        className="w-full h-[65vh] md:h-[80vh] pb-20" // Padding Bottom directly on the Swiper
+        autoplay={{
+          delay: 3000, 
+          disableOnInteraction: false, 
+        }}
+        className="w-full h-[65vh] md:h-[80vh] lg:h-[90vh] pb-40" 
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="relative">
@@ -52,7 +57,7 @@ const Slider = () => {
             />
             {/* Text Content */}
             <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-              <h2 className="text-white text-lg md:text-2xl font-bold px-4 text-center">
+              <h2 className="text-white text-lg md:text-2xl lg:text-4xl font-bold px-4 text-center">
                 {slide.text}
               </h2>
             </div>

@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-transparent md:bg-theme-brown">
       {/* Navbar Container */}
-      <div className="flex items-center justify-between px-5 py-3">
+      <div className="flex items-center justify-between px-4 md:px-8 lg:px-12 py-3">
         {/* Logo (only visible on tablet and desktop) */}
         <div className="hidden md:block">
           <img
@@ -27,7 +27,7 @@ const Navbar = () => {
         </button>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center justify-center space-x-8 text-white">
+        <ul className="hidden md:flex items-center justify-center space-x-8 text-white text-sm md:text-lg">
           <li>
             <Link
               to="/"
