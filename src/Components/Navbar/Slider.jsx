@@ -6,7 +6,8 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay"; // Import autoplay CSS
 
 // Import Swiper modules
-import { Navigation, Pagination, Autoplay } from "swiper/modules"; // Add Autoplay module
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { motion } from "framer-motion";
 
 const Slider = () => {
   const slides = [
@@ -25,27 +26,23 @@ const Slider = () => {
         "https://images.unsplash.com/photo-1606422315116-2c1b86cbf071?q=80&w=1285&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       text: "Lighting to Set the Mood",
     },
-    {
-      image:
-        "https://images.unsplash.com/photo-1606422315127-d6406a336564?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGRlY29yc3xlbnwwfHwwfHx8MA%3D%3D",
-      text: "Where Elegance Meets",
-    },
   ];
 
   return (
     <div className="w-full relative">
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]} 
+        modules={[Navigation, Pagination, Autoplay]}
         navigation
         pagination={{ clickable: true }}
         spaceBetween={30}
         slidesPerView={1}
         loop={true}
         autoplay={{
-          delay: 3000, 
-          disableOnInteraction: false, 
+          delay: 3000,
+          disableOnInteraction: false,
         }}
-        className="w-full h-[65vh] md:h-[80vh] lg:h-[90vh] pb-40" 
+        speed={800} // Controls the smoothness of the slide transition
+        className="w-full h-[90vh] md:h-[85vh] lg:h-[85vh] pb-40"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="relative">
@@ -57,9 +54,18 @@ const Slider = () => {
             />
             {/* Text Content */}
             <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-              <h2 className="text-white text-lg md:text-2xl lg:text-4xl font-bold px-4 text-center">
+              <motion.h2
+                className="text-white text-lg md:text-2xl lg:text-4xl font-bold px-4 text-center"
+                initial={{ opacity: 0, y: 50 }} // Starting animation state
+                animate={{ opacity: 1, y: 0 }} // Ending animation state
+                transition={{
+                  duration: 1, // Animation duration
+                  delay: 0.5, // Delay before animation starts
+                  ease: "easeOut", // Smooth easing
+                }}
+              >
                 {slide.text}
-              </h2>
+              </motion.h2>
             </div>
           </SwiperSlide>
         ))}
