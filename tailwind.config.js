@@ -11,7 +11,7 @@ export default {
         "menu-padding": "2rem",
       },
       fontFamily: {
-        'red-hat-display': ['Red Hat Display', 'sans-serif'],
+        'red-hat-display': ['Futura', 'sans-serif'],
       },
       colors: {
         // Custom theme colors
