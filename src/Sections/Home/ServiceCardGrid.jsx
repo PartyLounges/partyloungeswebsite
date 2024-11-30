@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const ServiceCardGrid = () => {
   const data = [
@@ -30,32 +32,72 @@ const ServiceCardGrid = () => {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 py-8 w-full">
-      {data.map((item, index) => (
-        <div
-          key={index}
-          className="relative bg-white shadow-md rounded-lg overflow-hidden min-h-[300px] hover:translate-y-[-5px] transition-transform duration-300 ease-in-out"
-        >
-          {/* Image with overlay */}
-          <img
-            src={item.image}
-            alt={item.title}
-            className="w-full h-[400px] object-cover"
-          />
-          <div className="absolute inset-0 bg-black opacity-40"></div>
+      {data.map((item, index) => {
+        const { ref, inView } = useInView({
+          triggerOnce: true,
+          threshold: 0.2,
+        });
 
-          {/* Text content overlay */}
-          <div className="text-left absolute inset-0 flex flex-col justify-center items-start p-6 text-white z-10">
-            <h3 className="text-left text-lg font-bold mb-3 underline">{item.title}</h3>
-            <p className="text-base mb-4">{item.text}</p>
-            <a
-              href="#"
-              className="text-white hover:text-gray-300 font-semibold text-center"
+        return (
+          <motion.div
+            key={index}
+            ref={ref}
+            className="relative bg-white shadow-md rounded-lg overflow-hidden min-h-[300px]"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: inView ? 1 : 0,
+              y: inView ? 0 : 50,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeInOut",
+              delay: index * 0.2,
+              type: "spring", // Added spring for more natural movement
+              stiffness: 300,
+              damping: 20,
+            }}
+            whileHover={{
+              y: -5, // Lift the card on hover
+              transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+              },
+            }}
+          >
+            {/* Image with overlay */}
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-[400px] object-cover"
+            />
+            <div className="absolute inset-0 bg-black opacity-40"></div>
+
+            {/* Text content overlay with animations */}
+            <motion.div
+              className="text-left absolute inset-0 flex flex-col justify-center items-start p-6 text-white z-10"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{
+                opacity: inView ? 1 : 0,
+                y: inView ? 0 : 20,
+              }}
+              transition={{
+                duration: 0.8,
+                ease: "easeInOut",
+                delay: index * 0.3,
+              }}
             >
-              {item.linkText}
-            </a>
-          </div>
-        </div>
-      ))}
+              <h3 className="text-left text-lg font-bold mb-3 underline">{item.title}</h3>
+              <p className="text-base mb-4">{item.text}</p>
+              <a
+                href="#"
+                className="text-white hover:text-gray-300 font-semibold text-center"
+              >
+                {item.linkText}
+              </a>
+            </motion.div>
+          </motion.div>
+        );
+      })}
     </div>
   );
 };

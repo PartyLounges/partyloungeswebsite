@@ -1,9 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const IntroSection = () => {
   return (
-    <div className="relative mx-4 md:mx-8 lg:mx-12 -mt-8 md:-mt-12 bg-theme-brown z-10 rounded-lg overflow-hidden">
-      {/* External margin for responsive padding around the section */}
+    <motion.div
+      className="relative mx-4 md:mx-8 lg:mx-12 -mt-8 md:-mt-12 bg-theme-brown z-10 rounded-lg overflow-hidden mb-8"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+    >
       <div className="mx-4 md:mx-8 lg:mx-12 py-12 md:py-16">
         <div className="max-w-6xl mx-auto px-5 md:px-8 lg:px-10">
           <div className="px-4 md:px-6 lg:px-8">
@@ -16,17 +22,19 @@ const IntroSection = () => {
               planning a private event or a corporate function, we ensure every
               detail is perfect.
             </p>
-            {/* Centering the button */}
             <div className="flex justify-center">
-              <button className="px-6 py-3 bg-theme-white text-theme-brown font-semibold rounded-lg hover:bg-theme-brown hover:text-theme-white border border-theme-white transition">
+              <motion.button
+                className="px-6 py-3 bg-theme-white text-theme-brown font-semibold rounded-lg hover:bg-theme-brown hover:text-theme-white border border-theme-white transition"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Learn More
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>
       </div>
-      <div className="mb-16"></div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const BlogSection = () => {
   const blogData = [
@@ -46,9 +47,23 @@ const BlogSection = () => {
         <h2 className="text-2xl font-bold mb-8 text-gray-800">Read our Blog</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogData.map((blog, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white rounded-lg shadow-lg shadow-gray-500/50 overflow-hidden hover:translate-y-[-5px] transition-transform duration-300"
+              className="bg-white rounded-lg shadow-lg shadow-gray-500/50 overflow-hidden"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }} // Trigger animation when in view
+              viewport={{ once: true }} // Animation will trigger only once
+              transition={{
+                duration: 0.6,
+                ease: "easeInOut",
+                delay: index * 0.2, // Stagger delay for each card
+                type: "spring", // Ensure consistent transition for both hover and scroll animations
+                stiffness: 300,
+                damping: 20,
+              }}
+              whileHover={{
+                y: -5, // Lift the card on hover
+              }}
             >
               <img
                 src={blog.image}
@@ -73,7 +88,7 @@ const BlogSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

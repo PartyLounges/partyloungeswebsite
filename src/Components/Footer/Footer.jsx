@@ -1,34 +1,65 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Importing Link from React Router
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import partyloungesLogo from '../../assets/images/partylounges.jpg';
 
 const Footer = () => {
   return (
-    <footer className="bg-theme-brown text-white py-8">
-      <div className="container mx-auto px-4 lg:px-16"> {/* Increased padding for larger screens */}
+    <motion.footer
+      className="bg-theme-brown text-white py-8"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}  // Animation triggers when the footer comes into view
+      viewport={{ once: true }}     // Animation happens only once when entering the viewport
+      transition={{ duration: 1 }}
+    >
+      <div className="container mx-auto px-4 lg:px-16">
         {/* Logo Section */}
-        <div className="block text-center mb-8">
+        <motion.div
+          className="block text-center mb-8"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}  // Trigger animation when in view
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
           <img
             src={partyloungesLogo}
             alt="Party Lounges Logo"
             className="mx-auto h-16 sm:h-20 md:h-24"
           />
-        </div>
+        </motion.div>
 
         {/* Grid for Footer Content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12"> {/* Increased gap between sections */}
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}  // Trigger fade-in animation when in view
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.4 }}
+        >
           {/* About Us */}
-          <div className="space-y-4">
+          <motion.div
+            className="space-y-4"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}  // Animate when in view
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.6 }}
+          >
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">About Us</h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
               Party Lounges is a full Service Provider and Event Management
               company that offers a wide range of experience, knowledge, and
               professionalism.
             </p>
-          </div>
+          </motion.div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
+          <motion.div
+            className="space-y-4"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}  // Animate when in view
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.8 }}
+          >
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">Quick Links</h3>
             <ul className="space-y-2">
               <li>
@@ -57,10 +88,16 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
+          <motion.div
+            className="space-y-4"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}  // Animate when in view
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 1 }}
+          >
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">Contact Info</h3>
             <ul className="space-y-4">
               <li className="flex items-center text-sm sm:text-base md:text-lg">
@@ -82,11 +119,17 @@ const Footer = () => {
                 <span>info@partylounges.com</span>
               </li>
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Social Media Links */}
-        <div className="flex justify-center mt-8 space-x-4">
+        <motion.div
+          className="flex justify-center mt-8 space-x-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}  // Fade-in animation when scrolled into view
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 1.2 }}
+        >
           <a
             href="#"
             className="text-white hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl"
@@ -111,14 +154,20 @@ const Footer = () => {
           >
             <i className="fa fa-globe"></i>
           </a>
-        </div>
+        </motion.div>
 
         {/* Copyright Section */}
-        <div className="mt-8 border-t border-gray-500 pt-4 text-center text-sm sm:text-base md:text-lg">
+        <motion.div
+          className="mt-8 border-t border-gray-500 pt-4 text-center text-sm sm:text-base md:text-lg"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}  // Fade-in animation when scrolled into view
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 1.4 }}
+        >
           © Party Lounges Ltd 2024, All Rights Reserved.
-        </div>
+        </motion.div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
