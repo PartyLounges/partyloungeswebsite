@@ -42,7 +42,7 @@ const Slider = () => {
           disableOnInteraction: false,
         }}
         speed={800} // Controls the smoothness of the slide transition
-        className="w-full h-[90vh] md:h-[85vh] lg:h-[85vh] pb-40"
+        className="w-full h-[90vh] md:h-[80vh] lg:h-[85vh] pb-40"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="relative">

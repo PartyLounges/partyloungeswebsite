@@ -51,18 +51,24 @@ const BlogSection = () => {
               key={index}
               className="bg-white rounded-lg shadow-lg shadow-gray-500/50 overflow-hidden"
               initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }} // Trigger animation when in view
-              viewport={{ once: true }} // Animation will trigger only once
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
               transition={{
                 duration: 0.6,
                 ease: "easeInOut",
-                delay: index * 0.2, // Stagger delay for each card
-                type: "spring", // Ensure consistent transition for both hover and scroll animations
+                delay: index * 0.2,
+                type: "spring",
                 stiffness: 300,
                 damping: 20,
               }}
               whileHover={{
-                y: -5, // Lift the card on hover
+                y: -5,
+                transition: {
+                  duration: 0.3,
+                  ease: "easeInOut",
+                },
               }}
             >
               <img

@@ -42,7 +42,7 @@ const ServiceCardGrid = () => {
           <motion.div
             key={index}
             ref={ref}
-            className="relative bg-white shadow-md rounded-lg overflow-hidden min-h-[300px]"
+            className="relative bg-theme-white shadow-md rounded-lg overflow-hidden min-h-[300px]"
             initial={{ opacity: 0, y: 50 }}
             animate={{
               opacity: inView ? 1 : 0,
@@ -52,29 +52,26 @@ const ServiceCardGrid = () => {
               duration: 0.6,
               ease: "easeInOut",
               delay: index * 0.2,
-              type: "spring", // Added spring for more natural movement
+              type: "spring",
               stiffness: 300,
               damping: 20,
             }}
             whileHover={{
-              y: -5, // Lift the card on hover
+              y: -5,
               transition: {
                 duration: 0.3,
                 ease: "easeInOut",
               },
             }}
           >
-            {/* Image with overlay */}
             <img
               src={item.image}
               alt={item.title}
               className="w-full h-[400px] object-cover"
             />
-            <div className="absolute inset-0 bg-black opacity-40"></div>
-
-            {/* Text content overlay with animations */}
+            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
             <motion.div
-              className="text-left absolute inset-0 flex flex-col justify-center items-start p-6 text-white z-10"
+              className="text-left absolute inset-0 flex flex-col justify-center items-start p-6 z-10"
               initial={{ opacity: 0, y: 20 }}
               animate={{
                 opacity: inView ? 1 : 0,
@@ -86,11 +83,15 @@ const ServiceCardGrid = () => {
                 delay: index * 0.3,
               }}
             >
-              <h3 className="text-left text-lg font-bold mb-3 underline">{item.title}</h3>
-              <p className="text-base mb-4">{item.text}</p>
+              <h3 className="text-lg font-bold mb-3 text-[#f0f0f0] underline">
+                {item.title}
+              </h3>
+              <p className="text-base mb-4 text-[#eaeaea]">
+                {item.text}
+              </p>
               <a
                 href="#"
-                className="text-white hover:text-gray-300 font-semibold text-center"
+                className="text-[#f0f0f0] hover:text-gray-300 font-semibold"
               >
                 {item.linkText}
               </a>

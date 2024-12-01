@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import partyloungesLogo from "../../assets/images/pl-logo.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const navLinks = ["Home", "About", "Gallery", "Blog", "Contact"];
 
   return (
     <motion.nav
@@ -24,7 +27,7 @@ const Navbar = () => {
           <img
             src={partyloungesLogo}
             alt="Party Lounges Logo"
-            className="h-14 w-auto object-contain"
+            className="h-16 w-auto object-contain"
           />
         </motion.div>
 
@@ -38,20 +41,27 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center justify-center space-x-8 text-white text-sm md:text-lg">
-          {["Home", "About", "Gallery", "Blog", "Contact"].map((item) => (
-            <motion.li
-              key={item}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Link
-                to={`/${item.toLowerCase()}`}
-                className="hover:underline hover:underline-offset-4 decoration-white"
+          {navLinks.map((item) => {
+            const isActive = location.pathname === `/${item.toLowerCase()}` || (item === "Home" && location.pathname === "/");
+            return (
+              <motion.li
+                key={item}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
               >
-                {item}
-              </Link>
-            </motion.li>
-          ))}
+                <Link
+                  to={`/${item.toLowerCase()}`}
+                  className={`${
+                    isActive
+                      ? "text-black underline underline-offset-4 decoration-2"
+                      : "hover:underline hover:underline-offset-4 decoration-white"
+                  }`}
+                >
+                  {item}
+                </Link>
+              </motion.li>
+            );
+          })}
         </ul>
       </div>
 
@@ -67,22 +77,29 @@ const Navbar = () => {
             style={{ maxHeight: "50vh", paddingTop: "1.5rem", paddingBottom: "1.5rem" }}
           >
             <ul className="flex flex-col items-start space-y-4 p-4">
-              {["Home", "About", "Gallery", "Blog", "Contact"].map((item) => (
-                <motion.li
-                  key={item}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 }}
-                >
-                  <Link
-                    to={`/${item.toLowerCase()}`}
-                    className="text-white text-lg py-1 px-4 rounded-md hover:bg-gray-700 hover:text-black"
-                    onClick={() => setMenuOpen(false)}
+              {navLinks.map((item) => {
+                const isActive = location.pathname === `/${item.toLowerCase()}` || (item === "Home" && location.pathname === "/");
+                return (
+                  <motion.li
+                    key={item}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 }}
                   >
-                    {item}
-                  </Link>
-                </motion.li>
-              ))}
+                    <Link
+                      to={`/${item.toLowerCase()}`}
+                      className={`${
+                        isActive
+                          ? "text-black underline underline-offset-4 decoration-2"
+                          : "text-white hover:bg-gray-700 hover:text-black"
+                      } text-lg py-1 px-4 rounded-md`}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {item}
+                    </Link>
+                  </motion.li>
+                );
+              })}
             </ul>
           </motion.div>
         )}

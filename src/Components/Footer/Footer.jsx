@@ -1,9 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import partyloungesLogo from '../../assets/images/partylounges.jpg';
 
 const Footer = () => {
+  const location = useLocation(); // Hook to get current route
+
+  const navLinks = ["Home", "About", "Gallery", "Blog", "Contact"];
+
   return (
     <motion.footer
       className="bg-theme-brown text-white py-8"
@@ -62,31 +66,28 @@ const Footer = () => {
           >
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">Quick Links</h3>
             <ul className="space-y-2">
-              <li>
-                <Link to="/" className="hover:underline text-sm sm:text-base md:text-lg">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="hover:underline text-sm sm:text-base md:text-lg">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/gallery" className="hover:underline text-sm sm:text-base md:text-lg">
-                  Gallery
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="hover:underline text-sm sm:text-base md:text-lg">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:underline text-sm sm:text-base md:text-lg">
-                  Contact
-                </Link>
-              </li>
+              {navLinks.map((item) => {
+                const isActive = location.pathname === `/${item.toLowerCase()}` || (item === "Home" && location.pathname === "/");
+                return (
+                  <motion.li
+                    key={item}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 }}
+                  >
+                    <Link
+                      to={`/${item.toLowerCase()}`}
+                      className={`${
+                        isActive
+                          ? "text-black underline underline-offset-4 decoration-2"
+                          : "text-white hover:bg-gray-700 hover:text-black"
+                      } text-lg py-1 px-4 rounded-md`}
+                    >
+                      {item}
+                    </Link>
+                  </motion.li>
+                );
+              })}
             </ul>
           </motion.div>
 
