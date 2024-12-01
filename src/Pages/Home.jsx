@@ -1,11 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Navbar from '../Components/Navbar/Navbar';
 import Slider from '../Components/Navbar/Slider';
 import IntroSection from '../Sections/Home/IntroSection';
 import ServiceCardGrid from '../Sections/Home/ServiceCardGrid';
 import BlogSection from '../Sections/Home/BlogSection';
-import Footer from '../Components/Footer/Footer';
 import InstagramProfile from '../Sections/Home/InstagramProfile';
 
 const Home = () => {
@@ -16,7 +14,6 @@ const Home = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
     >
-      <Navbar />
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -55,7 +52,6 @@ const Home = () => {
       >
         <InstagramProfile />
       </motion.div>
-      <Footer />
     </motion.div>
   );
 };

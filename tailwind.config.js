@@ -16,7 +16,7 @@ export default {
       colors: {
         // Custom theme colors
         'theme-brown': '#7C6344',
-        'theme-white': '#ffffff',
+        'theme-white': '#D9D9D9',
         'theme-black': '#000000',
         // "light-brown": "#f5e9df",
       },
