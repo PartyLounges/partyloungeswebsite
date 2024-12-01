@@ -19,7 +19,7 @@ const Slider = () => {
     {
       image:
         "https://plus.unsplash.com/premium_photo-1682259920062-d30783ac0375?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGRlY29yc3xlbnwwfHwwfHx8MA%3D%3D",
-      text: "Comfort for Every Occasion.",
+      text: "Comfort for Every Occasion",
     },
     {
       image:

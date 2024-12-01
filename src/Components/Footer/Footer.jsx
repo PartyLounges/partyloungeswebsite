@@ -1,10 +1,10 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import partyloungesLogo from '../../assets/images/partylounges.jpg';
+import partyloungesLogo from '../../assets/images/pl-logo.png';
 
 const Footer = () => {
-  const location = useLocation(); // Hook to get current route
+  const location = useLocation();
 
   const navLinks = ["Home", "About", "Gallery", "Blog", "Contact"];
 
@@ -12,8 +12,8 @@ const Footer = () => {
     <motion.footer
       className="bg-theme-brown text-white py-8"
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}  // Animation triggers when the footer comes into view
-      viewport={{ once: true }}     // Animation happens only once when entering the viewport
+      whileInView={{ opacity: 1 }}  
+      viewport={{ once: true }} 
       transition={{ duration: 1 }}
     >
       <div className="container mx-auto px-4 lg:px-16">

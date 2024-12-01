@@ -32,9 +32,10 @@ const InstagramProfile = () => {
         <a
           target="_blank"
           href="https://www.instagram.com/partylounges/"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 sm:py-2 sm:px-6 md:py-3 md:px-8 rounded mt-2 md:mt-0"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 sm:py-2 sm:px-6 md:py-3 md:px-8 rounded mt-2 md:mt-0 flex items-center space-x-2"
         >
-          Follow
+          <i className="fa fa-instagram text-white text-xl" />
+          <span>Follow</span>
         </a>
       </div>
     </div>
