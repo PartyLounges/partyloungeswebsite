@@ -102,20 +102,20 @@ const Footer = () => {
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">Contact Info</h3>
             <ul className="space-y-4">
               <li className="flex items-center text-sm sm:text-base md:text-lg">
-                <span className="bg-white text-theme-brown p-2 rounded-full mr-3">
-                  <i className="fa fa-phone"></i>
+                <span className="bg-white text-theme-brown p-3 rounded-full mr-3">
+                  <i className="fa fa-phone text-lg"></i>
                 </span>
                 <span>0722 424879 / 0734 859190</span>
               </li>
               <li className="flex items-center text-sm sm:text-base md:text-lg">
-                <span className="bg-white text-theme-brown p-2 rounded-full mr-3">
-                  <i className="fa fa-map-marker"></i>
+                <span className="bg-white text-theme-brown p-3 rounded-full mr-3">
+                  <i className="fa fa-map-marker text-lg"></i>
                 </span>
                 <span>Marula Lane, off Karen Road</span>
               </li>
               <li className="flex items-center text-sm sm:text-base md:text-lg">
-                <span className="bg-white text-theme-brown p-2 rounded-full mr-3">
-                  <i className="fa fa-envelope-o"></i>
+                <span className="bg-white text-theme-brown p-3 rounded-full mr-3">
+                  <i className="fa fa-envelope-o text-lg"></i>
                 </span>
                 <span>info@partylounges.com</span>
               </li>
