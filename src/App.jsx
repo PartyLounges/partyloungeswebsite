@@ -8,6 +8,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import BackToTopButton from "./Components/BackToTop";
 import Blogs from "./Pages/Blogs";
+import BlogShowPage from "./Sections/Blog/BlogShowPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="gallery" element={<Gallery />} />
           <Route path="contact" element={<Contact />} />
           <Route path="blogs" element={<Blogs />} />
+          <Route path="/blog/:id" element={<BlogShowPage />} />
         </Routes>
         <BackToTopButton />
       </main>
