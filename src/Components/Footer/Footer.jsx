@@ -6,7 +6,7 @@ import partyloungesLogo from '../../assets/images/pl-logo.png';
 const Footer = () => {
   const location = useLocation();
 
-  const navLinks = ["Home", "About", "Gallery", "Blog", "Contact"];
+  const navLinks = ["Home", "About", "Gallery", "Blogs", "Contact"];
 
   return (
     <motion.footer
