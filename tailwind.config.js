@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const typography = require('@tailwindcss/typography');
+import typography from '@tailwindcss/typography';
 export default {
   content: [
     "./index.html",
