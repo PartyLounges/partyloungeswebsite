@@ -7,17 +7,30 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
-  const navLinks = ["Home", "About", "Gallery", "Blog", "Contact"];
+  const navLinks = ["Home", "About", "Gallery", "Blogs", "Contact"];
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 w-full z-50 bg-transparent md:bg-theme-brown"
+      className="fixed top-0 left-0 w-full z-50 bg-theme-brown"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
       <div className="flex items-center justify-between px-4 md:px-8 lg:px-12 py-3">
         {/* Logo */}
+        <motion.div
+          className="block md:hidden"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <img
+            src={partyloungesLogo}
+            alt="Party Lounges Logo"
+            className="h-12 w-auto object-contain"
+          />
+        </motion.div>
+
         <motion.div
           className="hidden md:block"
           initial={{ scale: 0 }}
@@ -42,7 +55,9 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center justify-center space-x-8 text-white text-sm md:text-lg">
           {navLinks.map((item) => {
-            const isActive = location.pathname === `/${item.toLowerCase()}` || (item === "Home" && location.pathname === "/");
+            const isActive =
+              location.pathname === `/${item.toLowerCase()}` ||
+              (item === "Home" && location.pathname === "/");
             return (
               <motion.li
                 key={item}
@@ -78,7 +93,9 @@ const Navbar = () => {
           >
             <ul className="flex flex-col items-start space-y-4 p-4">
               {navLinks.map((item) => {
-                const isActive = location.pathname === `/${item.toLowerCase()}` || (item === "Home" && location.pathname === "/");
+                const isActive =
+                  location.pathname === `/${item.toLowerCase()}` ||
+                  (item === "Home" && location.pathname === "/");
                 return (
                   <motion.li
                     key={item}

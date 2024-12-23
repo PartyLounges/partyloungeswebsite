@@ -4,10 +4,11 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Gallery from "./Pages/Gallery";
 import Contact from "./Pages/Contact";
-import Blog from "./Pages/Blog";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import BackToTopButton from "./Components/BackToTop";
+import Blogs from "./Pages/Blogs";
+import BlogShowPage from "./Sections/Blog/BlogShowPage";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="blog" element={<Blog />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="/blog/:id" element={<BlogShowPage />} />
         </Routes>
         <BackToTopButton />
       </main>
