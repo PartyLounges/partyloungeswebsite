@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const GetQuoteSection = () => {
   return (
     <motion.section
-      className="flex flex-col lg:flex-row border-t-2 border-gray-300 pt-12"
+      className="flex flex-col lg:flex-row border-t-2 border-gray-300"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: 'easeOut' }}
