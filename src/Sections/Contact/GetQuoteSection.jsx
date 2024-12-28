@@ -17,25 +17,25 @@ const GetQuoteSection = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        <p className="text-lg font-medium mb-6 leading-relaxed">
+        <p className="text-lg font-red-hat-display mb-6 leading-relaxed">
           We cannot wait to work with you on your next event. Get in touch today and we will get back to you as soon as possible.
         </p>
         <ul className="text-base space-y-6">
           <li>
-            <span className="block font-semibold">0721424879 / 0734985910</span>
+            <span className="font-red-hat-display block font-semibold">0721424879 / 0734985910</span>
             <hr className="mt-2 border-t border-gray-400" />
           </li>
           <li>
             <div>
-              <span>Marula lane, off Karen</span>
+              <span className='font-red-hat-display'>Marula lane, off Karen</span>
               <br />
-              <span>Road Opposite the Marula Manor</span>
+              <span className='font-red-hat-display'>Road Opposite the Marula Manor</span>
             </div>
           </li>
           <li>
             <a
               href="mailto:info@partylounges.com"
-              className="text-black hover:underline"
+              className="text-black hover:underline font-red-hat-display"
             >
               info@partylounges.com
             </a>
@@ -53,7 +53,7 @@ const GetQuoteSection = () => {
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         <h2 className="text-3xl text-center font-proximanova-bold text-white mb-4">Get a Quote</h2>
-        <p className="text-white text-base mb-8 leading-relaxed">
+        <p className="text-white text-base mb-8 leading-relaxed font-red-hat-display">
           We'd love to hear your ideas and share ours, please reach out, and let's chat.
         </p>
         <motion.form
@@ -69,7 +69,7 @@ const GetQuoteSection = () => {
               type="date"
               id="date"
               placeholder="Date"
-              className="w-full px-4 py-3 rounded border border-white text-white bg-theme-brown focus:outline-none focus:ring-2 focus:ring-white focus:border-white placeholder-white"
+              className="font-red-hat-display w-full px-4 py-3 rounded border border-white text-white bg-theme-brown focus:outline-none focus:ring-2 focus:ring-white focus:border-white placeholder-white"
             />
           </div>
 
@@ -79,7 +79,7 @@ const GetQuoteSection = () => {
               type="number"
               id="number-pax"
               placeholder="Number of pax"
-              className="w-full px-4 py-3 rounded border border-white text-white bg-theme-brown focus:outline-none focus:ring-2 focus:ring-white focus:border-white placeholder-white"
+              className="font-red-hat-display w-full px-4 py-3 rounded border border-white text-white bg-theme-brown focus:outline-none focus:ring-2 focus:ring-white focus:border-white placeholder-white"
             />
           </div>
 
@@ -89,7 +89,7 @@ const GetQuoteSection = () => {
               type="text"
               id="look-feel"
               placeholder="Look and feel"
-              className="w-full px-4 py-3 rounded border border-white text-white bg-theme-brown focus:outline-none focus:ring-2 focus:ring-white focus:border-white placeholder-white"
+              className="font-red-hat-display w-full px-4 py-3 rounded border border-white text-white bg-theme-brown focus:outline-none focus:ring-2 focus:ring-white focus:border-white placeholder-white"
             />
           </div>
 
@@ -99,7 +99,7 @@ const GetQuoteSection = () => {
               type="text"
               id="venue"
               placeholder="Venue"
-              className="w-full px-4 py-3 rounded border border-white text-white bg-theme-brown focus:outline-none focus:ring-2 focus:ring-white focus:border-white placeholder-white"
+              className="font-red-hat-display w-full px-4 py-3 rounded border border-white text-white bg-theme-brown focus:outline-none focus:ring-2 focus:ring-white focus:border-white placeholder-white"
             />
           </div>
 
@@ -107,14 +107,14 @@ const GetQuoteSection = () => {
           <div>
             <select
               id="seating-style"
-              className="w-full px-4 py-3 rounded border border-white text-white bg-theme-brown focus:outline-none focus:ring-2 focus:ring-white focus:border-white"
+              className="font-red-hat-display w-full px-4 py-3 rounded border border-white text-white bg-theme-brown focus:outline-none focus:ring-2 focus:ring-white focus:border-white"
             >
               <option value="" disabled selected>
                 Seating style
               </option>
-              <option value="banquet">Banquet</option>
-              <option value="theater">Theater</option>
-              <option value="classroom">Classroom</option>
+              <option className='font-red-hat-display' value="banquet">Banquet</option>
+              <option className='font-red-hat-display' value="theater">Theater</option>
+              <option className='font-red-hat-display' value="classroom">Classroom</option>
             </select>
           </div>
 
@@ -122,7 +122,7 @@ const GetQuoteSection = () => {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="bg-white text-black py-3 px-6 rounded shadow-md border border-white 
+              className="bg-white font-red-hat-display text-black py-3 px-6 rounded shadow-md border border-white 
                          hover:bg-theme-brown hover:text-white focus:ring-2 focus:ring-offset-2 focus:ring-white transition-colors duration-200"
             >
               Submit

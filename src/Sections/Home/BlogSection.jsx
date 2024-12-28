@@ -67,8 +67,8 @@ const BlogSection = () => {
                       {blog.title}
                     </h3>
                   </Link>
-                  <p className="text-gray-600 text-sm mb-4">{blog.description}</p>
-                  <p className="text-gray-500 text-sm mb-4">{blog.date}</p>
+                  <p className="text-gray-600 text-sm mb-4 font-red-hat-display">{blog.description}</p>
+                  <p className="text-gray-500 text-sm mb-4 font-red-hat-display">{blog.date}</p>
                   <div className="flex items-center gap-4">
                     <img
                       src={blog.author.image}
@@ -76,8 +76,8 @@ const BlogSection = () => {
                       className="w-10 h-10 rounded-full"
                     />
                     <div>
-                      <p className="text-gray-800">{blog.author.name}</p>
-                      <p className="text-gray-600 text-sm">{blog.author.title}</p>
+                      <p className="text-gray-800 font-red-hat-display">{blog.author.name}</p>
+                      <p className="text-gray-600 font-red-hat-display text-sm">{blog.author.title}</p>
                     </div>
                   </div>
                 </div>

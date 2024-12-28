@@ -28,7 +28,7 @@ const BlogShowPage = () => {
       {/* Blog Content */}
       <div className="mx-auto px-[5%] tablet:px-[8%] py-12 max-w-5xl">
         <h1 className="text-3xl md:text-4xl font-proximanova-bold mb-4 text-gray-800">{blog.title}</h1>
-        <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
+        <p className="text-lg md:text-xl font-red-hat-display text-gray-700 mb-8 leading-relaxed">
           {blog.subtitle}
         </p>
 
@@ -37,13 +37,13 @@ const BlogShowPage = () => {
           {blog.body.split("/n").map((paragraph, index) => {
             if (paragraph.startsWith("**") && paragraph.endsWith("**")) {
               return (
-                <p key={index} className=" mb-8">
+                <p key={index} className="font-red-hat-display mb-8">
                   {paragraph.replace(/\*\*/g, "")}
                 </p>
               );
             }
             return (
-              <p key={index} className="mb-4">
+              <p key={index} className="font-red-hat-display mb-4">
                 {paragraph.trim()}
               </p>
             );
@@ -59,12 +59,12 @@ const BlogShowPage = () => {
               className="w-12 h-12 rounded-full"
             />
             <div>
-              <p className="text-gray-800 font-proximanova-bold">{blog.author.name}</p>
-              <p className="text-gray-600 text-sm">{blog.author.title}</p>
+              <p className="text-gray-800 font-red-hat-display">{blog.author.name}</p>
+              <p className="text-gray-600 font-red-hat-display text-sm">{blog.author.title}</p>
             </div>
           </div>
 
-          <div className="text-gray-500 text-sm">
+          <div className="text-gray-500 font-red-hat-display text-sm">
             {blog.date}
           </div>
         </div>

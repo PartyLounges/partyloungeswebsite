@@ -70,8 +70,8 @@ const BlogsPage = () => {
             {blog.title}
           </h3>
         </Link>
-        <p className="text-gray-600 text-sm mb-4">{blog.description}</p>
-        <p className="text-gray-500 text-sm mb-4">{blog.date}</p>
+        <p className="text-gray-600 text-sm mb-4 font-red-hat-display">{blog.description}</p>
+        <p className="text-gray-500 text-sm mb-4 font-red-hat-display">{blog.date}</p>
         {/* Author Info */}
         <div className="flex items-center gap-4">
           <img
@@ -80,10 +80,10 @@ const BlogsPage = () => {
             className="w-10 h-10 rounded-full"
           />
           <div>
-            <p className="text-gray-800 font-proximanova-bold">
+            <p className="text-gray-800 font-red-hat-display">
               {blog.author.name}
             </p>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 text-sm font-red-hat-display">
               {blog.author.title}
             </p>
           </div>
@@ -98,22 +98,22 @@ const BlogsPage = () => {
           <button
             onClick={goToPreviousPage}
             disabled={currentPage === 1}
-            className={`p-2 rounded-full border ${
-              currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-200"
+            className={`p-2 rounded-full font-red-hat-display border ${
+              currentPage === 1 ? "opacity-50 font-red-hat-display cursor-not-allowed" : "hover:bg-gray-200"
             }`}
           >
             ←
           </button>
-          <span className="text-gray-600 text-lg">
+          <span className="text-gray-600 text-lg font-red-hat-display">
             Page {currentPage} of {totalPages}
           </span>
           <button
             onClick={goToNextPage}
             disabled={currentPage === totalPages}
-            className={`p-2 rounded-full border ${
+            className={`p-2 font-red-hat-display rounded-full border ${
               currentPage === totalPages
-                ? "opacity-50 cursor-not-allowed"
-                : "hover:bg-gray-200"
+                ? "opacity-50 font-red-hat-display cursor-not-allowed"
+                : "hover:bg-gray-200 font-red-hat-display"
             }`}
           >
             →

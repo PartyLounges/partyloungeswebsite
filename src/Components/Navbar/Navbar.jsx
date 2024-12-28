@@ -47,13 +47,13 @@ const Navbar = () => {
         {/* Hamburger Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="text-white text-3xl z-50 md:hidden ml-auto"
+          className="text-white font-red-hat-display text-3xl z-50 md:hidden ml-auto"
         >
           {menuOpen ? "✕" : "☰"}
         </button>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center justify-center space-x-8 text-white text-sm md:text-lg">
+        <ul className="hidden md:flex font-red-hat-display items-center justify-center space-x-8 text-white text-sm md:text-lg">
           {navLinks.map((item) => {
             const isActive =
               location.pathname === `/${item.toLowerCase()}` ||
@@ -68,8 +68,8 @@ const Navbar = () => {
                   to={`/${item.toLowerCase()}`}
                   className={`${
                     isActive
-                      ? "text-black underline underline-offset-4 decoration-2"
-                      : "hover:underline hover:underline-offset-4 decoration-white"
+                      ? "text-black underline underline-offset-4 decoration-2 font-red-hat-display"
+                      : "hover:underline hover:underline-offset-4 decoration-white font-red-hat-display"
                   }`}
                 >
                   {item}

@@ -16,7 +16,7 @@ const IntroSection = () => {
             <h2 className="text-white text-lg md:text-2xl font-proximanova-bold mb-4">
               Party Lounges: A Full Service Provider and Event Management Company
             </h2>
-            <p className="text-white text-sm md:text-base leading-relaxed mb-6">
+            <p className="text-white text-sm md:text-base leading-relaxed mb-6 font-red-hat-display">
               Our team of professionals has an average of eight years of experience
               in the convention, meeting, and event industry. Whether you're
               planning a private event or a corporate function, we ensure every
@@ -24,7 +24,7 @@ const IntroSection = () => {
             </p>
             <div className="flex justify-center">
               <motion.button
-                className="px-6 py-3 bg-white text-theme-brown font-semibold rounded-lg hover:bg-theme-brown hover:text-white border border-white transition"
+                className="px-6 py-3 bg-white text-theme-brown font-red-hat-display rounded-lg hover:bg-theme-brown hover:text-white border border-white transition"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
