@@ -15,16 +15,16 @@ const InstagramProfile = () => {
         {/* Stats Section */}
         <div className="flex space-x-4 md:space-x-6 lg:space-x-8">
           <div className="text-center">
-            <p className="text-base md:text-lg lg:text-xl font-bold">309</p>
-            <p className="text-sm md:text-base lg:text-lg">Posts</p>
+            <p className="text-base md:text-lg lg:text-xl font-red-hat-display">309</p>
+            <p className="text-sm md:text-base lg:text-lg font-red-hat-display">Posts</p>
           </div>
           <div className="text-center">
-            <p className="text-base md:text-lg lg:text-xl font-bold">4,165</p>
-            <p className="text-sm md:text-base lg:text-lg">Followers</p>
+            <p className="text-base md:text-lg lg:text-xl font-red-hat-display">4,165</p>
+            <p className="text-sm md:text-base lg:text-lg font-red-hat-display">Followers</p>
           </div>
           <div className="text-center">
-            <p className="text-base md:text-lg lg:text-xl font-bold">843</p>
-            <p className="text-sm md:text-base lg:text-lg">Following</p>
+            <p className="text-base md:text-lg lg:text-xl font-red-hat-display">843</p>
+            <p className="text-sm md:text-base lg:text-lg font-red-hat-display">Following</p>
           </div>
         </div>
 
@@ -32,7 +32,7 @@ const InstagramProfile = () => {
         <a
           target="_blank"
           href="https://www.instagram.com/partylounges/"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 sm:py-2 sm:px-6 md:py-3 md:px-8 rounded mt-2 md:mt-0 flex items-center space-x-2"
+          className="bg-blue-500 font-red-hat-display hover:bg-blue-700 text-white py-1 px-4 sm:py-2 sm:px-6 md:py-3 md:px-8 rounded mt-2 md:mt-0 flex items-center space-x-2"
         >
           <i className="fa fa-instagram text-white text-xl" />
           <span>Follow</span>

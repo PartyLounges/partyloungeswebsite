@@ -13,12 +13,14 @@ export default {
       },
       fontFamily: {
         'red-hat-display': ['Futura', 'sans-serif'],
+        'proximanova-bold': ['proximanova-bold', 'ui-sans-serif'],
       },
       colors: {
         // Custom theme colors
         'theme-brown': '#7C6344',
         'theme-white': '#D9D9D9',
         'theme-black': '#000000',
+        'theme-cream-brown': '#E8DEC5',
         // "light-brown": "#f5e9df",
       },
       padding: {

@@ -48,8 +48,8 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">About Us</h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-proximanova-bold">About Us</h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed font-red-hat-display">
               Party Lounges is a full Service Provider and Event Management
               company that offers a wide range of experience, knowledge, and
               professionalism.
@@ -64,7 +64,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">Quick Links</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-proximanova-bold">Quick Links</h3>
             <ul className="space-y-2">
               {navLinks.map((item) => {
                 const isActive = location.pathname === `/${item.toLowerCase()}` || (item === "Home" && location.pathname === "/");
@@ -81,7 +81,7 @@ const Footer = () => {
                         isActive
                           ? "text-black underline underline-offset-4 decoration-2"
                           : "text-white hover:bg-gray-700 hover:text-black"
-                      } text-lg py-1 px-4 rounded-md`}
+                      } text-lg py-1 px-4 rounded-md font-red-hat-display`}
                     >
                       {item}
                     </Link>
@@ -99,25 +99,25 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 1 }}
           >
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">Contact Info</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-proximanova-bold">Contact Info</h3>
             <ul className="space-y-4">
-              <li className="flex items-center text-sm sm:text-base md:text-lg">
-                <span className="bg-white text-theme-brown p-3 rounded-full mr-3">
+              <li className="font-red-hat-display flex items-center text-sm sm:text-base md:text-lg">
+                <span className="bg-white font-red-hat-display text-theme-brown p-3 rounded-full mr-3">
                   <i className="fa fa-phone text-lg"></i>
                 </span>
-                <span>0722 424879 / 0734 859190</span>
+                <span className="font-red-hat-display">0722 424879 / 0734 859190</span>
               </li>
-              <li className="flex items-center text-sm sm:text-base md:text-lg">
-                <span className="bg-white text-theme-brown p-3 rounded-full mr-3">
+              <li className="font-red-hat-display flex items-center text-sm sm:text-base md:text-lg">
+                <span className="bg-white font-red-hat-display text-theme-brown p-3 rounded-full mr-3">
                   <i className="fa fa-map-marker text-lg"></i>
                 </span>
-                <span>Marula Lane, off Karen Road</span>
+                <span className="font-red-hat-display">Marula Lane, off Karen Road</span>
               </li>
-              <li className="flex items-center text-sm sm:text-base md:text-lg">
-                <span className="bg-white text-theme-brown p-3 rounded-full mr-3">
+              <li className="font-red-hat-display flex items-center text-sm sm:text-base md:text-lg">
+                <span className="bg-white font-red-hat-display text-theme-brown p-3 rounded-full mr-3">
                   <i className="fa fa-envelope-o text-lg"></i>
                 </span>
-                <span>info@partylounges.com</span>
+                <span className="font-red-hat-display">info@partylounges.com</span>
               </li>
             </ul>
           </motion.div>
@@ -133,25 +133,25 @@ const Footer = () => {
         >
           <a
             href="#"
-            className="text-white hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl"
+            className="text-white font-red-hat-display hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl"
           >
             <i className="fa fa-twitter"></i>
           </a>
           <a
             href="#"
-            className="text-white hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl"
+            className="text-white font-red-hat-display hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl"
           >
             <i className="fa fa-facebook"></i>
           </a>
           <a
             href="#"
-            className="text-white hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl"
+            className="text-white font-red-hat-display hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl"
           >
             <i className="fa fa-pinterest"></i>
           </a>
           <a
             href="#"
-            className="text-white hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl"
+            className="text-white font-red-hat-display hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl"
           >
             <i className="fa fa-globe"></i>
           </a>
@@ -159,7 +159,7 @@ const Footer = () => {
 
         {/* Copyright Section */}
         <motion.div
-          className="mt-8 border-t border-gray-500 pt-4 text-center text-sm sm:text-base md:text-lg"
+          className="mt-8 border-t font-red-hat-display border-gray-500 pt-4 text-center text-sm sm:text-base md:text-lg"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}  // Fade-in animation when scrolled into view
           viewport={{ once: true }}

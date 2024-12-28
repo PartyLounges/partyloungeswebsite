@@ -1,9 +1,12 @@
 import React from 'react'
+import GetQuoteSection from '../Sections/Contact/GetQuoteSection'
+import ContactUsTopSection from '../Sections/Contact/ContactUsTopSection'
 
 function Contact() {
     return (
         <div>
-            <h1>This is the Contact page</h1>
+            <ContactUsTopSection />
+            <GetQuoteSection />
         </div>
     )
 }
