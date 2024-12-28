@@ -55,7 +55,7 @@ const Slider = () => {
             {/* Text Content */}
             <div className="absolute inset-0 flex items-center justify-center bg-black/40">
               <motion.h2
-                className="text-white text-lg md:text-2xl lg:text-4xl font-bold px-4 text-center"
+                className="text-white text-lg md:text-2xl lg:text-4xl font-proximanova-bold px-4 text-center"
                 initial={{ opacity: 0, y: 50 }} // Starting animation state
                 animate={{ opacity: 1, y: 0 }} // Ending animation state
                 transition={{

@@ -52,7 +52,7 @@ const GetQuoteSection = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        <h2 className="text-3xl text-center font-bold text-white mb-4">Get a Quote</h2>
+        <h2 className="text-3xl text-center font-proximanova-bold text-white mb-4">Get a Quote</h2>
         <p className="text-white text-base mb-8 leading-relaxed">
           We'd love to hear your ideas and share ours, please reach out, and let's chat.
         </p>

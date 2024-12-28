@@ -33,7 +33,7 @@ const BlogsPage = () => {
     <section className="py-12 bg-white">
       <div className="mx-auto px-[5%] tablet:px-[8%]">
         {/* Section Title */}
-        <h2 className="text-2xl font-bold mb-8 text-gray-800 text-left py-12">
+        <h2 className="text-2xl font-proximanova-bold mb-8 text-gray-800 text-left py-12">
           Our Latest Blogs
         </h2>
 
@@ -66,7 +66,7 @@ const BlogsPage = () => {
       {/* Blog Content */}
       <div className="p-6">
         <Link to={`/blog/${blog.id}`}>
-          <h3 className="text-xl font-bold mb-2 text-gray-800">
+          <h3 className="text-xl font-proximanova-bold mb-2 text-gray-800">
             {blog.title}
           </h3>
         </Link>
@@ -80,7 +80,7 @@ const BlogsPage = () => {
             className="w-10 h-10 rounded-full"
           />
           <div>
-            <p className="text-gray-800 font-bold">
+            <p className="text-gray-800 font-proximanova-bold">
               {blog.author.name}
             </p>
             <p className="text-gray-600 text-sm">

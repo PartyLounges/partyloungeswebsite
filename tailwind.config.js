@@ -13,6 +13,7 @@ export default {
       },
       fontFamily: {
         'red-hat-display': ['Futura', 'sans-serif'],
+        'proximanova-bold': ['proximanova-bold', 'ui-sans-serif'],
       },
       colors: {
         // Custom theme colors

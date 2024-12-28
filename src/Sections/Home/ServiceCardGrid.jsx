@@ -83,7 +83,7 @@ const ServiceCardGrid = () => {
                 delay: index * 0.3,
               }}
             >
-              <h3 className="text-lg font-bold mb-3 text-[#f0f0f0] underline">
+              <h3 className="text-lg font-proximanova-bold mb-3 text-[#f0f0f0] underline">
                 {item.title}
               </h3>
               <p className="text-base mb-4 text-[#eaeaea]">

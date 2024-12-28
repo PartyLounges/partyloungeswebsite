@@ -46,10 +46,10 @@ const ContactUsTopSection = () => {
         className="relative text-center text-white px-4"
         variants={textVariants}
       >
-        <h3 className="text-lg md:text-xl lg:text-2xl font-medium mb-2">
+        <h3 className="text-lg md:text-xl lg:text-2xl font-proximanova-bold mb-2">
           Get in Touch
         </h3>
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-proximanova-bold">
           Contact Us
         </h1>
       </motion.div>

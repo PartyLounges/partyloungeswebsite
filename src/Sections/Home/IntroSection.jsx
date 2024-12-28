@@ -13,7 +13,7 @@ const IntroSection = () => {
       <div className="mx-4 md:mx-8 lg:mx-12 py-12 md:py-16">
         <div className="max-w-6xl mx-auto px-5 md:px-8 lg:px-10">
           <div className="px-4 md:px-6 lg:px-8">
-            <h2 className="text-white text-lg md:text-2xl font-bold mb-4">
+            <h2 className="text-white text-lg md:text-2xl font-proximanova-bold mb-4">
               Party Lounges: A Full Service Provider and Event Management Company
             </h2>
             <p className="text-white text-sm md:text-base leading-relaxed mb-6">

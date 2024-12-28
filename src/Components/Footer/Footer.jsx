@@ -48,7 +48,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">About Us</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-proximanova-bold">About Us</h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
               Party Lounges is a full Service Provider and Event Management
               company that offers a wide range of experience, knowledge, and
@@ -64,7 +64,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">Quick Links</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-proximanova-bold">Quick Links</h3>
             <ul className="space-y-2">
               {navLinks.map((item) => {
                 const isActive = location.pathname === `/${item.toLowerCase()}` || (item === "Home" && location.pathname === "/");
@@ -99,7 +99,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 1 }}
           >
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">Contact Info</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-proximanova-bold">Contact Info</h3>
             <ul className="space-y-4">
               <li className="flex items-center text-sm sm:text-base md:text-lg">
                 <span className="bg-white text-theme-brown p-3 rounded-full mr-3">
