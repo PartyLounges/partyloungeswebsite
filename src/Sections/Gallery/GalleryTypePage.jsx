@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { useParams, useNavigate } from "react-router-dom";
 import galleryData from "../../data/galleryData";
 
@@ -27,17 +28,28 @@ const GalleryTypePage = () => {
 
         {/* Filtered Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {filteredImages.map((image) => (
-            <div
+          {filteredImages.map((image, index) => (
+            <motion.div
               key={image.id}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+              duration: 0.6,
+                ease: "easeInOut",
+                delay: index * 0.2,
+              }}
+              whileHover={{
+                y: -5,
+                transition: { duration: 0.3, ease: "easeInOut" },
+              }}
             >
               <img
                 src={image.image}
                 alt={image.imageType}
-                className="w-full h-64 object-cover"
+                className="w-full h-64 object-cover cursor-pointer"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
