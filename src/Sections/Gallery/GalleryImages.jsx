@@ -1,18 +1,42 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import galleryData from "../../data/galleryData";
 
 const GalleryImages = () => {
   const [visibleImages, setVisibleImages] = useState(16);
+  const [currentImageIndex, setCurrentImageIndex] = useState(null);
+
   const totalImages = galleryData.length;
 
   const handleShowMore = () => {
     setVisibleImages((prevVisible) => Math.min(prevVisible + 10, totalImages));
   };
 
+  const openPopup = (index) => {
+    setCurrentImageIndex(index);
+  };
+
+  const closePopup = () => {
+    setCurrentImageIndex(null);
+  };
+
+  const goToNextImage = () => {
+    if (currentImageIndex !== null) {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % galleryData.length);
+    }
+  };
+
+  const goToPreviousImage = () => {
+    if (currentImageIndex !== null) {
+      setCurrentImageIndex((prevIndex) =>
+        (prevIndex - 1 + galleryData.length) % galleryData.length
+      );
+    }
+  };
+
   return (
     <section className="py-12 bg-white">
-      <div className="mx-auto px-[5%] tablet:px-[8%]">
+      <div className="mx-auto px-[5%] tablet:px-[4%]">
         {/* Section Title */}
         <h2 className="text-2xl font-proximanova-bold mb-8 text-gray-800 text-left py-12">
           Our Gallery
@@ -38,11 +62,12 @@ const GalleryImages = () => {
                 y: -5,
                 transition: { duration: 0.3, ease: "easeInOut" },
               }}
+              onClick={() => openPopup(index)}
             >
               <img
                 src={image.image}
                 alt={image.imageType}
-                className="w-full h-80 object-cover"
+                className="w-full h-64 object-cover cursor-pointer"
               />
             </motion.div>
           ))}
@@ -61,6 +86,63 @@ const GalleryImages = () => {
           </div>
         )}
       </div>
+
+      {/* Popup Modal */}
+      <AnimatePresence>
+        {currentImageIndex !== null && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closePopup}
+          >
+            <motion.div
+              className="relative rounded-lg overflow-hidden shadow-lg w-[90%] max-w-4xl"
+              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.5, opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            >
+              {/* Close Button */}
+              <button
+                onClick={closePopup}
+                className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl font-bold"
+              >
+                &times;
+              </button>
+
+              {/* Image */}
+              <motion.img
+                src={galleryData[currentImageIndex].image}
+                alt={galleryData[currentImageIndex].imageType}
+                className="w-full h-auto object-contain max-h-[80vh]"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              />
+
+              {/* Navigation Buttons */}
+              <div className="absolute inset-0 flex justify-between items-center px-4">
+                <button
+                  onClick={goToPreviousImage}
+                  className="text-white text-3xl font-bold bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-75"
+                >
+                  ←
+                </button>
+                <button
+                  onClick={goToNextImage}
+                  className="text-white text-3xl font-bold bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-75"
+                >
+                  →
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
