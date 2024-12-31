@@ -9,6 +9,7 @@ import Footer from "./Components/Footer/Footer";
 import BackToTopButton from "./Components/BackToTop";
 import Blogs from "./Pages/Blogs";
 import BlogShowPage from "./Sections/Blog/BlogShowPage";
+import GalleryTypePage from "./Sections/Gallery/GalleryTypePage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="/blog/:id" element={<BlogShowPage />} />
+          <Route path="/gallery/:type" element={<GalleryTypePage />} />
         </Routes>
         <BackToTopButton />
       </main>
