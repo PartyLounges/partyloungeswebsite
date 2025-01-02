@@ -21,6 +21,7 @@ export default {
         'theme-white': '#D9D9D9',
         'theme-black': '#000000',
         'theme-cream-brown': '#E8DEC5',
+        'aboutExperience-theme': "#D9D9D94D"
         // "light-brown": "#f5e9df",
       },
       padding: {
