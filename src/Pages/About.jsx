@@ -1,9 +1,14 @@
 import React from 'react'
+import AboutUsTopSection from '../Sections/About/AboutUsTopSection'
+import AboutExperienceSection from '../Sections/About/AboutExperienceSection'
+import AboutServicesSection from '../Sections/About/AboutServiceSection'
 
 function About() {
     return (
         <div>
-            <h1>This is the about page</h1>
+            <AboutUsTopSection />
+            <AboutExperienceSection />
+            <AboutServicesSection />
         </div>
     )
 }
