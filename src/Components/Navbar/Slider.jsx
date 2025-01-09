@@ -38,10 +38,10 @@ const Slider = () => {
         slidesPerView={1}
         loop={true}
         autoplay={{
-          delay: 3000,
+          delay: 6000,
           disableOnInteraction: false,
         }}
-        speed={800} // Controls the smoothness of the slide transition
+        speed={1500} // Controls the smoothness of the slide transition
         className="w-full h-[90vh] md:h-[80vh] lg:h-[85vh] pb-40"
       >
         {slides.map((slide, index) => (
