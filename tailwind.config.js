@@ -12,8 +12,11 @@ export default {
         "menu-padding": "2rem",
       },
       fontFamily: {
+        // ['red-hat-display']: ['Glacial Indifference', 'sans-serif'],
         'red-hat-display': ['Futura', 'sans-serif'],
-        'proximanova-bold': ['proximanova-bold', 'ui-sans-serif'],
+        // 'proximanova-bold': ['proximanova-bold', 'ui-sans-serif'],
+        'proximanova-bold': ['Rasputin', 'sans-serif'],
+                                                
       },
       colors: {
         // Custom theme colors
