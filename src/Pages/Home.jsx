@@ -5,6 +5,7 @@ import IntroSection from '../Sections/Home/IntroSection';
 import ServiceCardGrid from '../Sections/Home/ServiceCardGrid';
 import BlogSection from '../Sections/Home/BlogSection';
 import InstagramProfile from '../Sections/Home/InstagramProfile';
+import HeroSection from '../Components/Navbar/HeroSection';
 
 const Home = () => {
   return (
@@ -19,7 +20,7 @@ const Home = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
       >
-        <Slider />
+        <HeroSection />
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: -50 }}

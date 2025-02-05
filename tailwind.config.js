@@ -15,6 +15,10 @@ export default {
         'red-hat-display': ['Futura', 'sans-serif'],
         'proximanova-bold': ['proximanova-bold', 'ui-sans-serif'],
       },
+      fontSize: {
+        '80': '80px',
+        '96': '96px',
+      },
       colors: {
         // Custom theme colors
         'theme-brown': '#7C6344',

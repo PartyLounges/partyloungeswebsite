@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 w-full z-50 bg-theme-brown"
+      className="fixed top-0 left-0 w-full z-50 bg-[#0E202B]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -68,7 +68,7 @@ const Navbar = () => {
                   to={`/${item.toLowerCase()}`}
                   className={`${
                     isActive
-                      ? "text-black underline underline-offset-4 decoration-2 font-red-hat-display"
+                      ? "text-[#C5B3AB] underline underline-offset-4 decoration-2 font-red-hat-display"
                       : "hover:underline hover:underline-offset-4 decoration-white font-red-hat-display"
                   }`}
                 >
@@ -88,7 +88,7 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4 }}
-            className="fixed top-0 right-0 w-40 bg-theme-brown z-40 overflow-hidden"
+            className="fixed top-0 right-0 w-40 bg-[#C5B3AB] z-40 overflow-hidden"
             style={{ maxHeight: "50vh", paddingTop: "1.5rem", paddingBottom: "1.5rem" }}
           >
             <ul className="flex flex-col items-start space-y-4 p-4">
@@ -107,7 +107,7 @@ const Navbar = () => {
                       to={`/${item.toLowerCase()}`}
                       className={`${
                         isActive
-                          ? "text-black underline underline-offset-4 decoration-2"
+                          ? "text-[#C5B3AB] underline underline-offset-4 decoration-2"
                           : "text-white hover:bg-gray-700 hover:text-black"
                       } text-lg py-1 px-4 rounded-md`}
                       onClick={() => setMenuOpen(false)}
