@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 w-full z-50 bg-[#0E202B]"
+      className="fixed top-0 left-0 w-full z-50 bg-main-blue-theme"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -47,13 +47,13 @@ const Navbar = () => {
         {/* Hamburger Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="text-white font-red-hat-display text-3xl z-50 md:hidden ml-auto"
+          className="text-white-theme-blue font-red-hat-display text-3xl z-50 md:hidden ml-auto"
         >
           {menuOpen ? "✕" : "☰"}
         </button>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex font-red-hat-display items-center justify-center space-x-8 text-white text-sm md:text-lg">
+        <ul className="hidden md:flex font-red-hat-display items-center justify-center space-x-8 text-white-theme-blue text-sm md:text-lg">
           {navLinks.map((item) => {
             const isActive =
               location.pathname === `/${item.toLowerCase()}` ||
@@ -68,7 +68,7 @@ const Navbar = () => {
                   to={`/${item.toLowerCase()}`}
                   className={`${
                     isActive
-                      ? "text-[#C5B3AB] underline underline-offset-4 decoration-2 font-red-hat-display"
+                      ? "text-white underline underline-offset-4 decoration-2 font-red-hat-display"
                       : "hover:underline hover:underline-offset-4 decoration-white font-red-hat-display"
                   }`}
                 >
@@ -88,7 +88,7 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4 }}
-            className="fixed top-0 right-0 w-40 bg-[#C5B3AB] z-40 overflow-hidden"
+            className="fixed top-0 right-0 w-40 bg-main-blue-theme z-40 overflow-hidden"
             style={{ maxHeight: "50vh", paddingTop: "1.5rem", paddingBottom: "1.5rem" }}
           >
             <ul className="flex flex-col items-start space-y-4 p-4">
@@ -107,8 +107,8 @@ const Navbar = () => {
                       to={`/${item.toLowerCase()}`}
                       className={`${
                         isActive
-                          ? "text-[#C5B3AB] underline underline-offset-4 decoration-2"
-                          : "text-white hover:bg-gray-700 hover:text-black"
+                          ? "text-white underline underline-offset-4 decoration-2"
+                          : "text-white-theme-blue hover:bg-gray-700 hover:text-black"
                       } text-lg py-1 px-4 rounded-md`}
                       onClick={() => setMenuOpen(false)}
                     >

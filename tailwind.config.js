@@ -13,18 +13,25 @@ export default {
       },
       fontFamily: {
         'red-hat-display': ['Red Hat Display', 'sans-serif'],
-        'proximanova-bold': ['proximanova-bold', 'ui-sans-serif'],
+        'proximanova-bold': ['Red Hat Display', 'ui-sans-serif'],
+        // 'proximanova-bold': ['proximanova-bold', 'ui-sans-serif'],
       },
       fontSize: {
-        '32': '32px', // Small screens
-        '48': '48px', // Tablet
-        '64': '64px', // Large screens
-        '80': '80px', // XL screens
-        '96': '96px', // XXL screens
-        '120': '120px', // Hero text
+        '24': '24px',
+        '40': '40px',
+        '56': '56px',
+        '72': '72px',
+        '32': '32px',
+        '48': '48px',
+        '64': '64px',
+        '80': '80px',
+        '96': '96px',
+        '120': '120px',
       },
       colors: {
         // Custom theme colors
+        'white-theme-blue': '#C5B3AB',
+        'main-blue-theme': '#0E202B',
         'theme-brown': '#7C6344',
         'theme-white': '#D9D9D9',
         'theme-black': '#000000',
