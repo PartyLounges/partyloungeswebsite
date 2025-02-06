@@ -12,12 +12,16 @@ export default {
         "menu-padding": "2rem",
       },
       fontFamily: {
-        'red-hat-display': ['Futura', 'sans-serif'],
+        'red-hat-display': ['Red Hat Display', 'sans-serif'],
         'proximanova-bold': ['proximanova-bold', 'ui-sans-serif'],
       },
       fontSize: {
-        '80': '80px',
-        '96': '96px',
+        '32': '32px', // Small screens
+        '48': '48px', // Tablet
+        '64': '64px', // Large screens
+        '80': '80px', // XL screens
+        '96': '96px', // XXL screens
+        '120': '120px', // Hero text
       },
       colors: {
         // Custom theme colors
