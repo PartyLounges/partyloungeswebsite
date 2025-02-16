@@ -38,47 +38,21 @@ const AboutExperienceSection = () => {
       variants={containerVariant}
     >
       <div className="container mx-auto px-6 tablet:px-8 desktop:px-12">
-        {/* Introduction Text */}
-        <motion.div
-          className="text-center mb-8"
-          variants={textVariant}
-        >
-          <p className="text-lg font-medium text-gray-600 mb-4 font-red-hat-display">
-            Our team of professionals has an average of eight years of
-            experience in the convention, meeting, and event industry.
-          </p>
-        </motion.div>
-
         {/* Content Layout */}
         <motion.div
-          className="grid grid-cols-1 desktop:grid-cols-2 gap-8 items-center"
+          className="items-center"
           variants={containerVariant}
         >
           {/* Text Content */}
           <motion.div variants={textVariant}>
-            <h3 className="text-lg md:text-2xl font-proximanova-bold text-gray-800 mb-4">
-              Credible reputation as a full Service Provider and Event
-              Management
+            <h3 className="text-24 font-bold tablet:text-32 desktop:text-40 font-proximanova-bold my-4">
+              Welcome to Party Lounges LTD
             </h3>
-            <p className="text-gray-600 text-sm mb-4 font-red-hat-display">
-              Established in 2008, Party Lounges has built a credible reputation
-              as a full Service Provider and Event Management company that
-              offers a wide breadth of experience, knowledge, and
-              professionalism. Our team of professionals has an average of
-              eight years of experience in the convention, meeting, and event
-              industry. Our range of services includes all aspects of planning,
-              offered as a full package or could be tailor-made to a client’s
-              specifications.
+            <p className="text-18 font-proximanova-bold my-5">
+              Every great experience starts with a vision. When we founded Party Lounges LTD 16 years ago, we envisioned more than just beautiful 
+              furniture and well-styled spaces— We saw an opportunity to transform events into unforgettable moments. We believed, and still believe, 
+              that creativity, innovation, and sustainability could come together to redefine the way people celebrate and connect.
             </p>
-          </motion.div>
-
-          {/* Image */}
-          <motion.div variants={imageVariant}>
-            <img
-              src="https://images.unsplash.com/photo-1560184897-0e5d96d86acd?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8UnVzdGljJTIwRnVybml0dXJlfGVufDB8fDB8fHww"
-              alt="Event Management Setup"
-              className="rounded-lg shadow-lg w-full object-cover h-64 desktop:h-auto"
-            />
           </motion.div>
         </motion.div>
       </div>

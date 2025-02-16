@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const IntroSection = () => {
   return (
     <motion.div
-      className="relative mx-4 md:mx-8 lg:mx-12 -mt-8 md:-mt-12 bg-theme-brown z-10 rounded-lg overflow-hidden mb-8"
+      className="relative w-full bg-theme-brown overflow-hidden mb-8"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}

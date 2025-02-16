@@ -46,12 +46,12 @@ const AboutUsTopSection = () => {
         className="relative text-center text-white px-4"
         variants={textVariants}
       >
-        <h3 className="text-lg md:text-xl lg:text-2xl font-proximanova-bold mb-2">
-          Who are we?
-        </h3>
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-proximanova-bold">
+        <h1 className="text-40 font-bold tablet:text-48 desktop:text-56 font-proximanova-bold mb-2">
           Our Story
         </h1>
+        <h2 className="text-24 font-bold tablet:text-32 desktop:text-40 font-proximanova-bold">
+          WHERE CREATIVITY MEETS PURPOSE
+        </h2>
       </motion.div>
     </motion.section>
   );

@@ -17,6 +17,8 @@ export default {
         // 'proximanova-bold': ['proximanova-bold', 'ui-sans-serif'],
       },
       fontSize: {
+        '15': '15px',
+        '18': '18px',
         '24': '24px',
         '40': '40px',
         '56': '56px',
