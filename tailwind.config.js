@@ -31,11 +31,12 @@ export default {
       colors: {
         // Custom theme colors
         'white-theme-blue': '#C5B3AB',
-        'main-blue-theme': '#0E202B',
-        'theme-brown': '#7C6344',
+        'theme-brown': '#7C6344BF',
         'theme-white': '#D9D9D9',
+        'theme-cream-white': '#D9D9D94D',
         'theme-black': '#000000',
         'theme-cream-brown': '#E8DEC5',
+        'theme-white-landing': '#D9D9D94D',
         'aboutExperience-theme': "#D9D9D94D"
         // "light-brown": "#f5e9df",
       },
