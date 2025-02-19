@@ -41,13 +41,13 @@ const AboutCommitment = () => {
         <h1 className="text-left text-32 font-bold tablet:text-40 desktop:text-48 font-proximanova-bold mb-2">
           Looking Ahead: Our Commitment To You
         </h1>
-        <p className="text-left text-18 font-bold font-proximanova-bold">
+        <p className="text-left text-18 font-proximanova-bold">
           As we continue to grow, our mission remains clear: to curate holistic event platforms that drive meaningful 
           engagement and create moments that matter. Whether you're planning an intimate gathering, a corporate brand 
           experience, or a grand celebration, we are here to make it extraordinary.
         </p>
 
-        <p className="text-left text-18 font-bold font-proximanova-bold py-5">
+        <p className="text-left text-18 font-proximanova-bold py-5">
           Your vision is our inspiration, and we can't wait to craft something magical together. Thank you for being part of our 
           story—we look forward to being part of yours.
         </p>

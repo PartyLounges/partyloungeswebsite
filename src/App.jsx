@@ -10,6 +10,7 @@ import BackToTopButton from "./Components/BackToTop";
 import Blogs from "./Pages/Blogs";
 import BlogShowPage from "./Sections/Blog/BlogShowPage";
 import GalleryTypePage from "./Sections/Gallery/GalleryTypePage";
+import Catalogue from "./Pages/Catalogue";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="blogs" element={<Blogs />} />
           <Route path="/blog/:id" element={<BlogShowPage />} />
           <Route path="/gallery/:type" element={<GalleryTypePage />} />
+          <Route path="catalogues" element={<Catalogue />} />
         </Routes>
         <BackToTopButton />
       </main>
