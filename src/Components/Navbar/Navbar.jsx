@@ -7,7 +7,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
-  const navLinks = ["Home", "About", "Gallery", "Blogs", "Contact"];
+  const navLinks = ["Home", "Catalogues", "About", "Gallery", "Blogs", "Contact"];
 
   return (
     <motion.nav
