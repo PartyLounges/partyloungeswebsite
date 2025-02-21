@@ -14,13 +14,18 @@ const IntroSection = () => {
         <div className="max-w-6xl mx-auto px-5 md:px-8 lg:px-10">
           <div className="px-4 md:px-6 lg:px-8">
             <h2 className="text-white text-lg md:text-2xl font-proximanova-bold mb-4">
-              Party Lounges: A Full Service Provider and Event Management Company
+            Party Lounges: Premium Event rentals & Full-Service Event Planning & management
+
+            At Party Lounges, we specialize in event management, corporate event planning, 
+            and private party services. Our expert team, with an average of eight years 
+            of experience, ensures seamless event coordination for corporate functions, 
+            private parties, conferences, and social gatherings. From event planning to execution, 
+            we handle every detail to deliver a stress-free, unforgettable experience
             </h2>
             <p className="text-white text-sm md:text-base leading-relaxed mb-6 font-red-hat-display">
-              Our team of professionals has an average of eight years of experience
-              in the convention, meeting, and event industry. Whether you're
-              planning a private event or a corporate function, we ensure every
-              detail is perfect.
+            Our expert team brings an average of eight years of experience
+            in the convention, meeting, and event industry.Whether you're organizing a private event 
+            or a corporate function, we deliver flawless execution and attention to detail to make your event a success.
             </p>
             <div className="flex justify-center">
               <motion.button

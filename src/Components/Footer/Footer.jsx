@@ -50,9 +50,10 @@ const Footer = () => {
           >
             <h2 className="text-lg sm:text-xl md:text-2xl font-proximanova-bold">About Us</h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed font-red-hat-display">
-              Party Lounges is a full Service Provider and Event Management
-              company that offers a wide range of experience, knowledge, and
-              professionalism.
+            Party Lounges is a full-service event provider and event management company, offering unmatched 
+            expertise, creativity, and professionalism. With years of experience, we specialize in delivering 
+            seamless event planning, from corporate functions to luxury celebrations, ensuring every detail is 
+            executed flawlessly.
             </p>
           </motion.div>
 

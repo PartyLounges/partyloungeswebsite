@@ -27,19 +27,19 @@ const AboutCoreBeliefs = () => {
         
         {/* Text */}
         <p className="text-black text-sm md:text-base font-red-hat-display max-w-2xl">
-          At Party Lounges, we don’t just rent furniture; we curate transformative experiences. 
-          Our foundation is built on six core beliefs:
+        At Party Lounges, we do more than just rent event furniture—we curate transformative experiences that blend style, 
+        functionality, and innovation. Our foundation is built on six core principles that drive our commitment to excellence.
         </p>
       </div>
 
       {/* Core Beliefs List */}
       <ul className="space-y-4 text-black text-sm md:text-base font-red-hat-display">
-        <li><strong>Creativity with Purpose</strong> – Every event should tell a story, evoke emotions, and leave a lasting impact.</li>
-        <li><strong>Innovation that Inspires</strong> – We push boundaries, ensuring every setup is fresh, dynamic, and memorable.</li>
-        <li><strong>Sustainability at the Core</strong> – We are committed to reducing waste and choosing eco-friendly solutions without compromising elegance.</li>
-        <li><strong>Excellence in Every Detail</strong> – Our meticulous attention to detail ensures a seamless and stress-free event experience.</li>
-        <li><strong>Collaboration & Community</strong> – We value relationships, working closely with clients, vendors, and partners to bring visions to life.</li>
-        <li><strong>Transformative Experiences</strong> – Our goal is to create events that shift perspectives, inspire action, and build beautiful memories.</li>
+        <li><strong>Creativity with Purpose</strong> – Every event tells a story, evokes emotions, and leaves a lasting impact..</li>
+        <li><strong>Innovation that Inspires</strong> – We push boundaries to deliver fresh, dynamic, and memorable event setups..</li>
+        <li><strong>Sustainability at the Core</strong> – Committed to eco-friendly solutions and waste reduction without compromising elegance.</li>
+        <li><strong>Excellence in Every Detail</strong> – Our meticulous attention ensures seamless, stress-free event experiences.</li>
+        <li><strong>Collaboration & Community</strong> – We value strong relationships with clients, vendors, and partners to bring visions to life.</li>
+        <li><strong>Transformative Experiences</strong> – Our goal is to create events that shift perspectives, inspire action, and forge lasting memories.</li>
       </ul>
     </motion.section>
   );

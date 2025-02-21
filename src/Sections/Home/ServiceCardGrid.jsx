@@ -7,7 +7,7 @@ const ServiceCardGrid = () => {
     {
       title: "Corporate Parties",
       image: "https://images.unsplash.com/photo-1606422315127-d6406a336564?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGRlY29yc3xlbnwwfHwwfHx8MA%3D%3D",
-      text: "Corporate parties are often large undertakings, but with our understanding of planning and execution, we can transform any event into a memorable experience. From fabrication, catering, social engagement, and marketing, we're leading the way.",
+      text: "Planning a corporate party can be a complex task, but with our expertise in event management and execution, we transform every gathering into a memorable experience. From custom event fabrication, catering services, guest engagement, and event marketing, we provide end-to-end corporate event solutions that ensure success.",
       linkText: "Learn More..."
     },
     {

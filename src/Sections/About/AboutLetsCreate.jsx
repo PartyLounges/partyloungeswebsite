@@ -23,7 +23,9 @@ function AboutLetsCreate() {
           Let's Create Something Unforgettable
         </h3>
         <p className="text-left text-18 font-proximanova-bold my-5 mb-12">
-          Explore our collections, book a consultation, or reach out to bring your dream event to life. Your perfect event experience starts here.
+        Discover our exclusive event collections, book a personalized consultation, 
+        or connect with us to bring your dream event to life. Whether you're planning 
+        a luxury wedding, corporate event, or private celebration, your perfect event experience starts here.
         </p>
       </motion.div>
     </motion.div>

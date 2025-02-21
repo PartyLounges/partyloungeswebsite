@@ -42,9 +42,12 @@ const AboutJourney = () => {
           Our Journey
         </h1>
         <p className="text-18 font-bold font-proximanova-bold">
-          What started as a simple idea—to provide stylish high-quality furniture rentals—quickly grew into something much more meaningful. We became storytellers, crafting immersive 
-          event experiences that blend style with substance. Over the years, we've had the privilege of working with visionary clients, top-tier brands, and extraordinary individuals
-          who trust us to bring their dreams to life.
+        Our Journey – Crafting Unforgettable Event Experiences
+
+        What began as a vision to provide high-quality event furniture rentals quickly evolved into a mission to create 
+        immersive event experiences. At Party Lounges LTD, we don’t just furnish events—we tell stories through design, 
+        ambiance, and innovation. Over the years, we’ve had the privilege of collaborating with top-tier brands, 
+        corporate clients, and private event hosts who trust us to transform their event visions into reality.
         </p>
       </motion.div>
     </motion.section>

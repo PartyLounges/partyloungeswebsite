@@ -39,17 +39,22 @@ const AboutCommitment = () => {
         variants={textVariant}
       >
         <h1 className="text-left text-32 font-bold tablet:text-40 desktop:text-48 font-proximanova-bold mb-2">
-          Looking Ahead: Our Commitment To You
+         Looking Ahead: Our Commitment to Exceptional Events
         </h1>
         <p className="text-left text-18 font-proximanova-bold">
-          As we continue to grow, our mission remains clear: to curate holistic event platforms that drive meaningful 
-          engagement and create moments that matter. Whether you're planning an intimate gathering, a corporate brand 
-          experience, or a grand celebration, we are here to make it extraordinary.
+        
+
+        As Party Lounges continues to evolve, our mission remains clear: to create immersive event experiences 
+        that foster meaningful engagement and leave a lasting impact. Whether you're planning an intimate gathering, 
+        corporate brand activation, luxury wedding, or grand celebration, we bring expert event planning, premium décor, 
+        and seamless execution to make your vision a reality.
+
+
         </p>
 
         <p className="text-left text-18 font-proximanova-bold py-5">
-          Your vision is our inspiration, and we can't wait to craft something magical together. Thank you for being part of our 
-          story—we look forward to being part of yours.
+        Your vision inspires us, and we can't wait to craft something extraordinary together. 
+        Thank you for being part of our journey—we look forward to bringing your event to life.
         </p>
       </motion.div>
     </motion.section>

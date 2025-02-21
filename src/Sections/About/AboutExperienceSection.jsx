@@ -49,9 +49,12 @@ const AboutExperienceSection = () => {
               Welcome to Party Lounges LTD
             </h3>
             <p className="text-18 font-proximanova-bold my-5 mb-12">
-              Every great experience starts with a vision. When we founded Party Lounges LTD 16 years ago, we envisioned more than just beautiful 
-              furniture and well-styled spaces— We saw an opportunity to transform events into unforgettable moments. We believed, and still believe, 
-              that creativity, innovation, and sustainability could come together to redefine the way people celebrate and connect.
+            Welcome to Party Lounges LTD – Premium Event Planning & Decor Services
+
+            At Party Lounges LTD, we believe every great event starts with a vision. Founded 16 years ago, we set out to do more than just
+            provide luxury event furniture and stylish event spaces—our goal is to create unforgettable experiences. Through creativity, 
+            innovation, and sustainable event solutions, we transform corporate events, private parties, and social gatherings into extraordinary 
+            celebrations.
             </p>
           </motion.div>
         </motion.div>
