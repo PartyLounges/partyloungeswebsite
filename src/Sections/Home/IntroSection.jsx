@@ -15,7 +15,7 @@ const IntroSection = () => {
         <div className="max-w-6xl mx-auto px-5 md:px-8 lg:px-10">
           <div className="px-4 md:px-6 lg:px-8">
             <h2 className="text-white text-lg md:text-2xl font-proximanova-bold mb-4">
-            Party Lounges: Premium Event rentals & Full-Service Event Planning & management
+            Party Lounges: Premium Event rentals & Full-Service Event Planning & management.
 
             At Party Lounges, we specialize in event management, corporate event planning, 
             and private party services. Our expert team, with an average of eight years 
