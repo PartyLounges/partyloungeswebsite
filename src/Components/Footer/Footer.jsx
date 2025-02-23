@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import partyloungesLogo from '../../assets/images/pl-logo.png';
+import partyloungesLogo from '../../assets/images/pl-logo.jpg';
 
 const Footer = () => {
   const location = useLocation();

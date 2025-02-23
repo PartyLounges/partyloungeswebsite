@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import partyloungesLogo from "../../assets/images/pl-logo.png";
+import partyloungesLogo from "../../assets/images/pl-logo.jpg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
