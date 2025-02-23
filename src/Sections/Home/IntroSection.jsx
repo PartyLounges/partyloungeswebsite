@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const IntroSection = () => {
   return (
@@ -28,6 +29,7 @@ const IntroSection = () => {
             or a corporate function, we deliver flawless execution and attention to detail to make your event a success.
             </p>
             <div className="flex justify-center">
+            <Link to="/about">
               <motion.button
                 className="px-6 py-3 bg-white text-theme-brown font-red-hat-display rounded-lg hover:bg-theme-brown hover:text-white border border-white transition"
                 whileHover={{ scale: 1.05 }}
@@ -35,6 +37,7 @@ const IntroSection = () => {
               >
                 Learn More
               </motion.button>
+            </Link>
             </div>
           </div>
         </div>

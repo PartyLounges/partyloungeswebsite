@@ -34,7 +34,7 @@ const MyCatalogue = () => {
         className="text-center text-24 font-bold tablet:text-32 desktop:text-40 text-black font-red-hat-display mb-10"
         variants={textVariants}
       >
-        Our Event Furniture Collection: {activeCatalogue}
+        Our Event Furniture Collection
       </motion.h2>
 
       {/* Swiper Component */}
