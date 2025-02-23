@@ -21,7 +21,7 @@ const Footer = () => {
         <motion.div
           className="block text-center mb-8"
           initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}  // Trigger animation when in view
+          whileInView={{ opacity: 1, y: 0 }} 
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2 }}
         >
@@ -36,7 +36,7 @@ const Footer = () => {
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}  // Trigger fade-in animation when in view
+          whileInView={{ opacity: 1 }}  
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.4 }}
         >
@@ -44,16 +44,16 @@ const Footer = () => {
           <motion.div
             className="space-y-4"
             initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}  // Animate when in view
+            whileInView={{ opacity: 1, x: 0 }}  
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.6 }}
           >
             <h2 className="text-lg sm:text-xl md:text-2xl font-proximanova-bold">About Us</h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed font-red-hat-display">
-            Party Lounges is a full-service event provider and event management company, offering unmatched 
-            expertise, creativity, and professionalism. With years of experience, we specialize in delivering 
-            seamless event planning, from corporate functions to luxury celebrations, ensuring every detail is 
-            executed flawlessly.
+              Party Lounges is a full-service event provider and event management company, offering unmatched 
+              expertise, creativity, and professionalism. With years of experience, we specialize in delivering 
+              seamless event planning, from corporate functions to luxury celebrations, ensuring every detail is 
+              executed flawlessly.
             </p>
           </motion.div>
 
@@ -61,7 +61,7 @@ const Footer = () => {
           <motion.div
             className="space-y-4"
             initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}  // Animate when in view
+            whileInView={{ opacity: 1, x: 0 }}  
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.8 }}
           >
@@ -96,29 +96,29 @@ const Footer = () => {
           <motion.div
             className="space-y-4"
             initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}  // Animate when in view
+            whileInView={{ opacity: 1, x: 0 }}  
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 1 }}
           >
             <h3 className="text-lg sm:text-xl md:text-2xl font-proximanova-bold">Contact Info</h3>
             <ul className="space-y-4">
               <li className="font-red-hat-display flex items-center text-sm sm:text-base md:text-lg">
-                <span className="bg-white font-red-hat-display text-theme-brown p-3 rounded-full mr-3">
+                <span className="bg-white text-theme-brown p-3 rounded-full mr-3">
                   <i className="fa fa-phone text-lg"></i>
                 </span>
-                <span className="font-red-hat-display">0722 424879 / 0734 859190</span>
+                <span>0722 424879 / 0734 859190</span>
               </li>
               <li className="font-red-hat-display flex items-center text-sm sm:text-base md:text-lg">
-                <span className="bg-white font-red-hat-display text-theme-brown p-3 rounded-full mr-3">
+                <span className="bg-white text-theme-brown p-3 rounded-full mr-3">
                   <i className="fa fa-map-marker text-lg"></i>
                 </span>
-                <span className="font-red-hat-display">Marula Lane, off Karen Road</span>
+                <span>Marula Lane, off Karen Road</span>
               </li>
               <li className="font-red-hat-display flex items-center text-sm sm:text-base md:text-lg">
-                <span className="bg-white font-red-hat-display text-theme-brown p-3 rounded-full mr-3">
+                <span className="bg-white text-theme-brown p-3 rounded-full mr-3">
                   <i className="fa fa-envelope-o text-lg"></i>
                 </span>
-                <span className="font-red-hat-display">info@partylounges.com</span>
+                <span>info@partylounges.com</span>
               </li>
             </ul>
           </motion.div>
@@ -128,45 +128,44 @@ const Footer = () => {
         <motion.div
           className="flex justify-center mt-8 space-x-4"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}  // Fade-in animation when scrolled into view
+          whileInView={{ opacity: 1 }}  
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 1.2 }}
         >
-          <a
-            href="#"
-            className="text-white font-red-hat-display hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl"
-          >
+          <a href="#" className="text-white hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl">
             <i className="fa fa-twitter"></i>
           </a>
-          <a
-            href="#"
-            className="text-white font-red-hat-display hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl"
-          >
+          <a href="#" className="text-white hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl">
             <i className="fa fa-facebook"></i>
           </a>
-          <a
-            href="#"
-            className="text-white font-red-hat-display hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl"
-          >
+          <a href="#" className="text-white hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl">
             <i className="fa fa-pinterest"></i>
           </a>
-          <a
-            href="#"
-            className="text-white font-red-hat-display hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl"
-          >
+          <a href="#" className="text-white hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl">
             <i className="fa fa-globe"></i>
           </a>
         </motion.div>
 
-        {/* Copyright Section */}
+        {/* Copyright & Designed By Section */}
         <motion.div
-          className="mt-8 border-t font-red-hat-display border-gray-500 pt-4 text-center text-sm sm:text-base md:text-lg"
+          className="mt-8 border-t border-gray-500 pt-4 text-center text-sm sm:text-base md:text-lg font-red-hat-display"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}  // Fade-in animation when scrolled into view
+          whileInView={{ opacity: 1 }}  
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 1.4 }}
         >
-          © Party Lounges Ltd 2024, All Rights Reserved.
+          <p>© Party Lounges Ltd 2025, All Rights Reserved.</p>
+          <p className="mt-2">
+            Designed with <span className="text-red-500">❤️</span> by 
+            <a 
+              href="https://www.linkedin.com/in/nemwel-nyandoro/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white font-semibold hover:underline ml-1"
+            >
+              Nemwel
+            </a>
+          </p>
         </motion.div>
       </div>
     </motion.footer>
