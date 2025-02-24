@@ -77,18 +77,6 @@ const Navbar = () => {
               </motion.li>
             );
           })}
-
-          {/* Contact Card Link */}
-          <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-            <a
-              href="/Patricia.vcf"
-              className="hover:underline hover:underline-offset-4 decoration-white font-red-hat-display"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Contact Card
-            </a>
-          </motion.li>
         </ul>
       </div>
 
@@ -129,19 +117,6 @@ const Navbar = () => {
                   </motion.li>
                 );
               })}
-
-              {/* Mobile Contact Card Link */}
-              <motion.li initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
-                <a
-                  href="/Patricia.vcf"
-                  className="text-white hover:bg-gray-700 hover:text-black text-lg py-1 px-4 rounded-md"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Contact Card
-                </a>
-              </motion.li>
             </ul>
           </motion.div>
         )}
