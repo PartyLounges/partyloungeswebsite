@@ -7,15 +7,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Catalogues", path: "/catalogues" },
-    { name: "About", path: "/about" },
-    { name: "Gallery", path: "/gallery" },
-    { name: "Blogs", path: "/blogs" },
-    { name: "Contact", path: "/contact" },
-    { name: "Contact Card", path: "/Patricia.vcf", external: true }, // Contact Card added
-  ];
+  const navLinks = ["Home", "Catalogues", "About", "Gallery", "Blogs", "Contact"];
 
   return (
     <motion.nav
@@ -62,35 +54,41 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex font-red-hat-display items-center justify-center space-x-8 text-white text-sm md:text-lg">
-          {navLinks.map(({ name, path, external }) => {
+          {navLinks.map((item) => {
             const isActive =
-              location.pathname === path || (name === "Home" && location.pathname === "/");
-
-            return external ? (
-              <motion.li key={name} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                <a
-                  href={path}
-                  download
-                  className="hover:underline hover:underline-offset-4 decoration-white font-red-hat-display"
-                >
-                  {name}
-                </a>
-              </motion.li>
-            ) : (
-              <motion.li key={name} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              location.pathname === `/${item.toLowerCase()}` ||
+              (item === "Home" && location.pathname === "/");
+            return (
+              <motion.li
+                key={item}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <Link
-                  to={path}
+                  to={`/${item.toLowerCase()}`}
                   className={`${
                     isActive
                       ? "text-black underline underline-offset-4 decoration-2 font-red-hat-display"
                       : "hover:underline hover:underline-offset-4 decoration-white font-red-hat-display"
                   }`}
                 >
-                  {name}
+                  {item}
                 </Link>
               </motion.li>
             );
           })}
+
+          {/* Contact Card Link */}
+          <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <a
+              href="/Patricia.vcf"
+              className="hover:underline hover:underline-offset-4 decoration-white font-red-hat-display"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact Card
+            </a>
+          </motion.li>
         </ul>
       </div>
 
@@ -106,25 +104,19 @@ const Navbar = () => {
             style={{ maxHeight: "50vh", paddingTop: "1.5rem", paddingBottom: "1.5rem" }}
           >
             <ul className="flex flex-col items-start space-y-4 p-4">
-              {navLinks.map(({ name, path, external }) => {
+              {navLinks.map((item) => {
                 const isActive =
-                  location.pathname === path || (name === "Home" && location.pathname === "/");
-
-                return external ? (
-                  <motion.li key={name} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
-                    <a
-                      href={path}
-                      download
-                      className="text-white text-lg py-1 px-4 rounded-md hover:bg-gray-700 hover:text-black"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      {name}
-                    </a>
-                  </motion.li>
-                ) : (
-                  <motion.li key={name} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
+                  location.pathname === `/${item.toLowerCase()}` ||
+                  (item === "Home" && location.pathname === "/");
+                return (
+                  <motion.li
+                    key={item}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 }}
+                  >
                     <Link
-                      to={path}
+                      to={`/${item.toLowerCase()}`}
                       className={`${
                         isActive
                           ? "text-black underline underline-offset-4 decoration-2"
@@ -132,11 +124,24 @@ const Navbar = () => {
                       } text-lg py-1 px-4 rounded-md`}
                       onClick={() => setMenuOpen(false)}
                     >
-                      {name}
+                      {item}
                     </Link>
                   </motion.li>
                 );
               })}
+
+              {/* Mobile Contact Card Link */}
+              <motion.li initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
+                <a
+                  href="/Patricia.vcf"
+                  className="text-white hover:bg-gray-700 hover:text-black text-lg py-1 px-4 rounded-md"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Contact Card
+                </a>
+              </motion.li>
             </ul>
           </motion.div>
         )}
