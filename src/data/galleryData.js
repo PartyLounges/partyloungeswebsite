@@ -1,8 +1,6 @@
-let baseURL = "/src/assets/images/Gallery/";
-
 const galleryData = Array.from({ length: 18 }, (_, index) => ({
   id: index + 1,
-  image: `${baseURL}party_gallery${index + 1}.jpg`,
+  image: `/assets/images/Gallery/party_gallery${index + 1}.jpg`,
   imageType: "Out door", 
 }));
 
