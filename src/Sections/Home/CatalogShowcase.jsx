@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
 import catalogData from "../../data/CatalogueData";
 import { FaArrowRight } from "react-icons/fa";
 
 const CatalogShowcase = () => {
   const navigate = useNavigate();
+  const [selectedCatalog, setSelectedCatalog] = useState(null);
+
+  // Pick a random catalog on each refresh
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * catalogData.length);
+    setSelectedCatalog(catalogData[randomIndex]);
+  }, []);
 
   // Animation variants
   const textVariants = {
@@ -26,6 +29,8 @@ const CatalogShowcase = () => {
     }),
   };
 
+  if (!selectedCatalog) return null; // Ensure we don't render before selecting a catalog
+
   return (
     <div className="container mx-auto px-4 py-16">
       {/* Section Title */}
@@ -38,61 +43,39 @@ const CatalogShowcase = () => {
         Our Event Furniture Collection
       </motion.h2>
 
-      {/* Swiper Component */}
-      <Swiper
-        modules={[Pagination]}
-        spaceBetween={50}
-        slidesPerView={1}
-        loop={true}
-        pagination={{ clickable: true }}
-        className="w-full"
+      {/* Featured Image */}
+      <motion.div
+        className="mb-6 flex justify-center"
+        variants={imageVariants}
+        custom={0}
+        initial="hidden"
+        animate="visible"
       >
-        {/* Show only first 3 catalogues */}
-        {catalogData.slice(0, 3).map((catalogue, catIndex) => (
-          <SwiperSlide key={catIndex} className="w-full">
-            <motion.div className="mb-16">
-              {/* Featured Image */}
-              <motion.div
-                className="mb-6 flex justify-center"
-                variants={imageVariants}
-                custom={0}
-                initial="hidden"
-                animate="visible"
-              >
-                <img
-                  src={catalogue.main_image}
-                  alt={catalogue.catalogue_name}
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
-              </motion.div>
+        <img
+          src={selectedCatalog.main_image}
+          alt={selectedCatalog.catalogue_name}
+          className="w-full h-auto rounded-lg shadow-lg"
+        />
+      </motion.div>
 
-              {/* Grid of Other Images */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {catalogue.other_images.map((image, index) => (
-                  <motion.div
-                    key={index}
-                    className="w-full h-48 md:h-64 overflow-hidden rounded-lg shadow-md"
-                    variants={imageVariants}
-                    custom={index + 1}
-                    initial="hidden"
-                    animate="visible"
-                  >
-                    <img
-                      src={image}
-                      alt={`Catalogue ${catalogue.catalogue_name} - ${index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </SwiperSlide>
+      {/* Grid of Other Images */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {selectedCatalog.other_images.map((image, index) => (
+          <motion.div
+            key={index}
+            className="w-full h-48 md:h-64 overflow-hidden rounded-lg shadow-md"
+            variants={imageVariants}
+            custom={index + 1}
+            initial="hidden"
+            animate="visible"
+          >
+            <img
+              src={image}
+              alt={`Catalogue ${selectedCatalog.catalogue_name} - ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
         ))}
-      </Swiper>
-
-      {/* Pagination Dots Positioned Above "See More" */}
-      <div className="mt-6 flex justify-center">
-        <div className="swiper-pagination"></div>
       </div>
 
       {/* "See More" Button */}
@@ -101,7 +84,7 @@ const CatalogShowcase = () => {
           className="bg-theme-brown font-red-hat-display px-6 py-3 text-white rounded shadow-md border border-theme-brown 
                      hover:bg-white hover:text-theme-brown focus:ring-2 focus:ring-offset-2 focus:ring-theme-brown transition-colors duration-200 
                      flex items-center gap-2"
-          onClick={() => navigate("/catalogues")} // Navigate to /catalogues
+          onClick={() => navigate("/catalogues")}
         >
           See More <FaArrowRight />
         </button>
