@@ -156,7 +156,7 @@ const Footer = () => {
         >
           <p>© Party Lounges Ltd 2025, All Rights Reserved.</p>
           <p className="mt-2">
-            Designed with <span className="text-red-500">❤️</span> by 
+            Made with <span className="text-red-500">❤️</span> by 
             <a 
               href="https://www.linkedin.com/in/nemwel-nyandoro/" 
               target="_blank" 
