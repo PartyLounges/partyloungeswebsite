@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
+import ourstoryjourney from "../../assets/images/About/ourstoryjourney.jpg"
 
 const AboutCommitment = () => {
   const containerVariant = {
@@ -23,8 +24,7 @@ const AboutCommitment = () => {
     <motion.section
       className="relative w-full h-[75vh] md:h-[75vh] lg:h-[85vh] flex items-center justify-center bg-cover bg-center pt-15 md:pt-18 lg:pt-20"
       style={{
-        backgroundImage:
-          "url('https://plus.unsplash.com/premium_photo-1733864775775-4c92c128c7e4?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q296eSUyMGxpdmluZyUyMHJvb20lMjB3aXRoJTIwZmlyZXBsYWNlJTJDJTIwaGFyZHdvb2QlMjBmbG9vcnMlMkMlMjBhbmQlMjB2aW50YWdlJTIwZnVybml0dXJlfGVufDB8fDB8fHww')",
+        backgroundImage: `url(${ourstoryjourney})`,
       }}
       variants={containerVariant}
       initial="hidden"

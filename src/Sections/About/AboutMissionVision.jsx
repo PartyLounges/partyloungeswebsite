@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import ourstoryvision from "../../assets/images/About/ourstoryvision.jpg"
+import ourstorymision from "../../assets/images/About/ourstorymision.jpg"
 
 const AboutMissionVision = () => {
   const textVariant = {
@@ -68,9 +69,9 @@ const AboutMissionVision = () => {
         >
           <motion.div variants={imageVariant}>
             <img
-              src="https://images.unsplash.com/photo-1560184897-0e5d96d86acd?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8UnVzdGljJTIwRnVybml0dXJlfGVufDB8fDB8fHww"
+              src={ourstorymision}
               alt="Mission"
-              className="rounded-lg shadow-lg w-full object-cover h-64 desktop:h-auto"
+              className="rounded-lg shadow-lg w-full object-cover h-64 desktop:h-96"
             />
           </motion.div>
           <motion.div variants={textVariant}>
