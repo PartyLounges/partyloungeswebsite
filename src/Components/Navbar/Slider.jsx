@@ -11,21 +11,21 @@ import { Link } from "react-router-dom";
 const Slider = () => {
   const slides = [
     {
-      image: "https://images.unsplash.com/photo-1606422315127-d6406a336564?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      image: "/assets/images/Home/lastingconnections.jpeg",
       title: "Creating Lasting",
       highlight: "Connections",
       description: "Exhibitions & Conferences -",
       link: "/about",
     },
     {
-      image: "https://plus.unsplash.com/premium_photo-1682259920062-d30783ac0375?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      image: "/assets/images/Home/discovercatalogues.jpeg",
       title: "Discover Our",
       highlight: "Catalogues",
       description: "Explore our diverse range of premium lounge setups -",
       link: "/catalogues",
     },
     {
-      image: "https://images.unsplash.com/photo-1606422315116-2c1b86cbf071?q=80&w=1285&auto=format&fit=crop&ixlib=rb-4.0.3",
+      image: "/assets/images/Home/galleryshowcase.jpg",
       title: "Capturing Moments",
       highlight: "Gallery Showcase",
       description: "View stunning event lounge designs and decor inspirations -",
@@ -42,7 +42,7 @@ const Slider = () => {
         spaceBetween={0}
         slidesPerView={1}
         loop={true}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        autoplay={{ delay: 6000, disableOnInteraction: false }}
         speed={1200}
         effect="fade"
         className="w-full h-[100vh] md:h-[100vh] lg:h-[100vh] pb-40"
