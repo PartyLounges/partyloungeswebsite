@@ -52,26 +52,26 @@ const Slider = () => {
             <img src={slide.image} alt={slide.highlight} className="w-full h-full object-cover" />
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-center p-6">
               <motion.h2
-                className="text-white text-lg md:text-2xl lg:text-4xl font-proximanova-bold py-6"
+                className="text-white text-24 tablet:text-32 desktop:text-40 font-proximanova-bold py-6"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
               >
                 {slide.title} <br />
-                <span className="text-white text-3xl md:text-5xl font-bold py-4">
+                <span className="text-white text-40 font-bold tablet:text-48 desktop:text-56 font-proximanova-bold ">
                   {slide.highlight}
                 </span>
               </motion.h2>
               <motion.div
-                className="text-white text-sm md:text-lg mt-2 flex items-center gap-2"
+                className="text-white text-24 tablet:text-32 desktop:text-40 font-proximanova-bold mt-2 "
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.3 }}
               >
-                <span>{slide.description}</span>
+                <span>{slide.description} </span>
                 <Link
                   to={slide.link}
-                  className="text-white text-sm md:text-lg underline font-semibold hover:text-gray-300"
+                  className="text-white text-18 tablet:text-24 desktop:text-32 font-proximanova-bold underline font-semibold hover:text-gray-300"
                   aria-label={`Learn more about ${slide.highlight}`}
                 >
                   Learn More →
