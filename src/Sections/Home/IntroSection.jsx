@@ -19,7 +19,7 @@ const IntroSection = () => {
             </h2>
             <p className="text-white text-sm md:text-base leading-relaxed mb-6 font-red-hat-display">
             At Party Lounges, we specialize in event management, corporate event planning, 
-            and private party services. Our expert team, with an average of eight years 
+            and private party services. Our expert team, with an average of sixteen years 
             of experience, ensures seamless event coordination for corporate functions, 
             private parties, conferences, and social gatherings. From event planning to execution, 
             we handle every detail to deliver a stress-free, unforgettable experience

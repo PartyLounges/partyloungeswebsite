@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -9,6 +9,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const Slider = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const slides = [
     {
       image: "/assets/images/Home/lastingconnections.jpeg",
@@ -42,15 +44,20 @@ const Slider = () => {
         spaceBetween={0}
         slidesPerView={1}
         loop={true}
-        autoplay={{ delay: 6000, disableOnInteraction: false }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
         speed={1200}
         effect="fade"
         className="w-full h-[100vh] md:h-[100vh] lg:h-[100vh] pb-40"
+        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="relative">
-            <img src={slide.image} alt={slide.highlight} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-center p-6">
+            {/* <img src={slide.image} alt={slide.highlight} className="w-full h-full object-cover" /> */}
+            <div
+              className={`absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-center p-6 transition-opacity duration-1000 ${
+                activeIndex === index ? "opacity-100" : "opacity-0 hidden"
+              }`}
+            >
               <motion.h2
                 className="text-white text-24 tablet:text-32 desktop:text-40 font-proximanova-bold py-6"
                 initial={{ opacity: 0, y: 30 }}
@@ -58,12 +65,12 @@ const Slider = () => {
                 transition={{ duration: 1, ease: "easeOut" }}
               >
                 {slide.title} <br />
-                <span className="text-white text-40 font-bold tablet:text-48 desktop:text-56 font-proximanova-bold ">
+                <span className="text-white text-40 font-bold tablet:text-48 desktop:text-56 font-proximanova-bold">
                   {slide.highlight}
                 </span>
               </motion.h2>
               <motion.div
-                className="text-white text-24 tablet:text-32 desktop:text-40 font-proximanova-bold mt-2 "
+                className="text-white text-24 tablet:text-32 desktop:text-40 font-proximanova-bold mt-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.3 }}
