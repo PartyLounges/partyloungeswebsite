@@ -52,9 +52,16 @@ const Slider = () => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="relative">
-            {/* <img src={slide.image} alt={slide.highlight} className="w-full h-full object-cover" /> */}
+            <div className="absolute inset-0 w-full h-full">
+              {/* Blurred background image */}
+              <img
+                src={slide.image}
+                alt={slide.highlight}
+                className="w-full h-full object-cover blur-md"
+              />
+            </div>
             {activeIndex === index && (
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-center p-6 transition-opacity duration-1000 opacity-100">
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-black/40">
                 <motion.h2
                   className="text-white text-24 tablet:text-32 desktop:text-40 font-proximanova-bold py-6"
                   initial={{ opacity: 0, y: 30 }}
