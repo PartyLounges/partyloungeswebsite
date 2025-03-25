@@ -74,7 +74,7 @@ const Slider = () => {
                   </span>
                 </motion.h2>
                 <motion.div
-                  className="text-white text-24 tablet:text-32 desktop:text-40 font-proximanova-bold mt-2"
+                  className="text-white text-24 tablet:text-32 desktop:text-40 font-proximanova-bold mt-2 max-w-[90%] md:max-w-[80%] lg:max-w-[80%] mx-auto"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1, delay: 0.3 }}
