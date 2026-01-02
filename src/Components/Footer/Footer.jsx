@@ -165,7 +165,7 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 1.4 }}
         >
-          © Party Lounges Ltd 2024, All Rights Reserved.
+          © Party Lounges Ltd {new Date().getFullYear()}, All Rights Reserved.
         </motion.div>
       </div>
     </motion.footer>
