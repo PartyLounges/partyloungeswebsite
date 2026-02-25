@@ -32,16 +32,16 @@ const GalleryTypePage = () => {
             <motion.div
               key={image.id}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-              duration: 0.6,
-                ease: "easeInOut",
-                delay: index * 0.2,
+                duration: 0.68,
+                ease: [0.22, 1, 0.36, 1],
+                delay: index * 0.08,
               }}
               whileHover={{
-                y: -5,
-                transition: { duration: 0.3, ease: "easeInOut" },
+                y: -4,
+                transition: { duration: 0.24, ease: [0.22, 1, 0.36, 1] },
               }}
             >
               <img

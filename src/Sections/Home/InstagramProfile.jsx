@@ -19,11 +19,11 @@ const InstagramProfile = () => {
             <p className="text-sm md:text-base lg:text-lg font-red-hat-display">Posts</p>
           </div>
           <div className="text-center">
-            <p className="text-base md:text-lg lg:text-xl font-red-hat-display">4,165</p>
+            <p className="text-base md:text-lg lg:text-xl font-red-hat-display">4,185</p>
             <p className="text-sm md:text-base lg:text-lg font-red-hat-display">Followers</p>
           </div>
           <div className="text-center">
-            <p className="text-base md:text-lg lg:text-xl font-red-hat-display">843</p>
+            <p className="text-base md:text-lg lg:text-xl font-red-hat-display">848</p>
             <p className="text-sm md:text-base lg:text-lg font-red-hat-display">Following</p>
           </div>
         </div>

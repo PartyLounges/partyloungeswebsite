@@ -1,72 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/autoplay"; // Import autoplay CSS
-
-// Import Swiper modules
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css/effect-fade";
+import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Slider = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const slides = [
     {
-      image:
-        "https://images.unsplash.com/photo-1606422315127-d6406a336564?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGRlY29yc3xlbnwwfHwwfHx8MA%3D%3D",
-      text: "Where Elegance Meets",
+      image: "/assets/images/Home/lastingconnections.jpeg",
+      title: "Creating Lasting",
+      highlight: "Connections",
+      description: "Exhibitions & Conferences -",
+      link: "/about",
     },
     {
-      image:
-        "https://plus.unsplash.com/premium_photo-1682259920062-d30783ac0375?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGRlY29yc3xlbnwwfHwwfHx8MA%3D%3D",
-      text: "Comfort for Every Occasion",
+      image: "/assets/images/Home/discovercatalogues.jpeg",
+      title: "Discover Our",
+      highlight: "Catalogues",
+      description: "Explore our diverse range of premium lounge setups -",
+      link: "/catalogues",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1606422315116-2c1b86cbf071?q=80&w=1285&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      text: "Lighting to Set the Mood",
+      image: "/assets/images/Home/galleryshowcase.jpg",
+      title: "Capturing Moments",
+      highlight: "Gallery Showcase",
+      description: "View stunning event lounge designs and decor inspirations -",
+      link: "/gallery",
     },
   ];
 
   return (
     <div className="w-full relative">
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
+        modules={[Navigation, Pagination, Autoplay, EffectFade]}
         navigation
         pagination={{ clickable: true }}
-        spaceBetween={30}
+        spaceBetween={0}
         slidesPerView={1}
         loop={true}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        speed={800} // Controls the smoothness of the slide transition
-        className="w-full h-[90vh] md:h-[80vh] lg:h-[85vh] pb-40"
+        autoplay={{ delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+        speed={1300}
+        effect="fade"
+        className="w-full h-[100vh] md:h-[100vh] lg:h-[100vh] pb-40"
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="relative">
-            {/* Image */}
-            <img
-              src={slide.image}
-              alt={`Slide ${index}`}
-              className="w-full h-full object-cover"
-            />
-            {/* Text Content */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-              <motion.h2
-                className="text-white text-lg md:text-2xl lg:text-4xl font-proximanova-bold px-4 text-center"
-                initial={{ opacity: 0, y: 50 }} // Starting animation state
-                animate={{ opacity: 1, y: 0 }} // Ending animation state
-                transition={{
-                  duration: 1, // Animation duration
-                  delay: 0.5, // Delay before animation starts
-                  ease: "easeOut", // Smooth easing
-                }}
-              >
-                {slide.text}
-              </motion.h2>
+            <div className="absolute inset-0 w-full h-full">
+              {/* Blurred background image */}
+              <img
+                src={slide.image}
+                alt={slide.highlight}
+                className="w-full h-full object-cover blur-md"
+              />
             </div>
+            {activeIndex === index && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-black/40">
+                <motion.h2
+                  className="text-white text-24 tablet:text-32 desktop:text-40 font-proximanova-bold py-6"
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.82, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  {slide.title} <br />
+                  <span className="text-white text-40 font-bold tablet:text-48 desktop:text-56 font-proximanova-bold">
+                    {slide.highlight}
+                  </span>
+                </motion.h2>
+                <motion.div
+                  className="text-white text-24 tablet:text-32 desktop:text-40 font-proximanova-bold mt-2 max-w-[90%] md:max-w-[80%] lg:max-w-[80%] mx-auto"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.72, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <span>{slide.description} </span>
+                  <Link
+                    to={slide.link}
+                    className="text-white text-18 tablet:text-24 desktop:text-32 font-proximanova-bold underline font-semibold hover:text-gray-300"
+                    aria-label={`Learn more about ${slide.highlight}`}
+                  >
+                    Learn More →
+                  </Link>
+                </motion.div>
+              </div>
+            )}
           </SwiperSlide>
         ))}
       </Swiper>

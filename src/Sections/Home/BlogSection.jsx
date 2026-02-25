@@ -18,7 +18,7 @@ const BlogSection = () => {
 
     const interval = setInterval(() => {
       setDisplayedBlogs(getRandomBlogs());
-    }, 10000); // Update every 10 seconds
+    }, 12000); // Update every 12 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
@@ -28,29 +28,36 @@ const BlogSection = () => {
       <div className="mx-auto px-[5%] tablet:px-[8%]">
         <h2 className="text-2xl font-proximanova-bold mb-8 text-gray-800">Read our Blog</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AnimatePresence>
+          <AnimatePresence mode="popLayout" initial={false}>
             {displayedBlogs.map((blog, index) => (
               <motion.div
                 key={blog.id} // Use a unique key for AnimatePresence
+                layout
                 className="bg-white rounded-lg shadow-lg shadow-gray-500/50 overflow-hidden"
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 24 }}
                 animate={{
                   opacity: 1,
                   y: 0,
                 }}
                 exit={{
                   opacity: 0,
-                  y: -50,
+                  y: -16,
                 }}
                 transition={{
-                  duration: 0.6,
-                  ease: "easeInOut",
+                  duration: 0.7,
+                  delay: index * 0.05,
+                  ease: [0.22, 1, 0.36, 1],
+                  layout: {
+                    type: "spring",
+                    stiffness: 120,
+                    damping: 20,
+                  },
                 }}
                 whileHover={{
-                  y: -5,
+                  y: -4,
                   transition: {
-                    duration: 0.3,
-                    ease: "easeInOut",
+                    duration: 0.28,
+                    ease: [0.22, 1, 0.36, 1],
                   },
                 }}
               >

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GTAG_ID%"></script>
@@ -13,16 +14,58 @@
       gtag("config", "%VITE_GTAG_ID%", { send_page_view: false });
     </script>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Party Lounges</title>
-    <!--font aweome icons links-->
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Party Lounges is a premium Event Rentals & Full-Service Event Planning & Management. We specialize in event management, corporate event planning, and private party services." />
+    <meta name="keywords" content="Event Planning, Party Rentals, Corporate Events, Private Parties, Full-Service Event Management" />
+    <meta name="author" content="Party Lounges" />
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Open Graph (For Social Media) -->
+    <meta property="og:title" content="Party Lounges - Event Rentals & Full-Service Event Management" />
+    <meta property="og:description" content="Premium event rentals and full-service event planning. We specialize in corporate events, private parties, and large-scale event management." />
+    <meta property="og:image" content="/partylounges.png" />
+    <meta property="og:url" content="https://partylounges.com/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Party Lounges - Event Planning & Management" />
+    <meta name="twitter:description" content="We provide premium event rentals and full-service event planning for corporate and private parties." />
+    <meta name="twitter:image" content="/partylounges.png" />
+
+    <link rel="icon" type="image/png" href="/partylounges.png" />
+    <title>Party Lounges</title>
+
+    <!-- Font Awesome & Google Fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script>
+      (function () {
+        const tagId = "%VITE_GTAG_ID%";
+        if (!tagId) return;
+
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${tagId}`;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          window.dataLayer.push(arguments);
+        };
+        window.gtag("js", new Date());
+        window.gtag("config", tagId, { send_page_view: false });
+      })();
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
+
 </html>

@@ -5,24 +5,24 @@ const GetQuoteSection = () => {
   return (
     <motion.section
       className="flex flex-col lg:flex-row border-t-2 border-gray-300"
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: 'easeOut' }}
+      transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
     >
-      {/* Left Side: Contact Info */}
+      {/* Left Side: Contact hello */}
       <motion.div
         className="bg-theme-cream-brown p-6 rounded-lg lg:w-1/2 flex flex-col justify-center px-[5%] md:px-[8%] lg:px-[10%] py-4 border border-white"
-        initial={{ opacity: 0, x: -50 }}
+        initial={{ opacity: 0, x: -24 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        transition={{ duration: 0.68, ease: [0.22, 1, 0.36, 1] }}
       >
         <p className="text-lg font-red-hat-display mb-6 leading-relaxed">
           We cannot wait to work with you on your next event. Get in touch today and we will get back to you as soon as possible.
         </p>
         <ul className="text-base space-y-6">
           <li>
-            <span className="font-red-hat-display block font-semibold">0721424879 / 0734985910</span>
+            <span className="font-red-hat-display block font-semibold">0734985910 / 0718613655</span>
             <hr className="mt-2 border-t border-gray-400" />
           </li>
           <li>
@@ -34,10 +34,10 @@ const GetQuoteSection = () => {
           </li>
           <li>
             <a
-              href="mailto:info@partylounges.com"
+              href="mailto:hello@partylounges.com"
               className="text-black hover:underline font-red-hat-display"
             >
-              info@partylounges.com
+              hello@partylounges.com
             </a>
             <hr className="mt-2 border-t border-gray-400" />
           </li>
@@ -47,10 +47,10 @@ const GetQuoteSection = () => {
       {/* Right Side: Quote Form */}
       <motion.div
         className="bg-theme-brown p-8 rounded-lg lg:w-1/2 px-[5%] md:px-[6%] lg:px-[8%] border border-white"
-        initial={{ opacity: 0, x: 50 }}
+        initial={{ opacity: 0, x: 24 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        transition={{ duration: 0.68, ease: [0.22, 1, 0.36, 1] }}
       >
         <h2 className="text-3xl text-center font-proximanova-bold text-white mb-4">Get a Quote</h2>
         <p className="text-white text-base mb-8 leading-relaxed font-red-hat-display">
@@ -58,10 +58,10 @@ const GetQuoteSection = () => {
         </p>
         <motion.form
           className="space-y-4"
-          initial={{ scale: 0.9, opacity: 0 }}
+          initial={{ scale: 0.95, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* Date Field */}
           <div>

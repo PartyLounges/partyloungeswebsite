@@ -7,7 +7,7 @@ const ServiceCardGrid = () => {
     {
       title: "Corporate Parties",
       image: "https://images.unsplash.com/photo-1606422315127-d6406a336564?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGRlY29yc3xlbnwwfHwwfHx8MA%3D%3D",
-      text: "Corporate parties are often large undertakings, but with our understanding of planning and execution, we can transform any event into a memorable experience. From fabrication, catering, social engagement, and marketing, we're leading the way.",
+      text: "Planning a corporate party can be a complex task, but with our expertise in event management and execution, we transform every gathering into a memorable experience. From custom event fabrication, catering services, guest engagement, and event marketing, we provide end-to-end corporate event solutions that ensure success.",
       linkText: "Learn More..."
     },
     {
@@ -43,24 +43,24 @@ const ServiceCardGrid = () => {
             key={index}
             ref={ref}
             className="relative bg-theme-white shadow-md rounded-lg overflow-hidden min-h-[300px]"
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{
               opacity: inView ? 1 : 0,
-              y: inView ? 0 : 50,
+              y: inView ? 0 : 24,
             }}
             transition={{
-              duration: 0.6,
-              ease: "easeInOut",
-              delay: index * 0.2,
+              duration: 0.65,
+              ease: [0.22, 1, 0.36, 1],
+              delay: index * 0.12,
               type: "spring",
-              stiffness: 300,
-              damping: 20,
+              stiffness: 170,
+              damping: 24,
             }}
             whileHover={{
-              y: -5,
+              y: -4,
               transition: {
-                duration: 0.3,
-                ease: "easeInOut",
+                duration: 0.25,
+                ease: [0.22, 1, 0.36, 1],
               },
             }}
           >
@@ -72,15 +72,15 @@ const ServiceCardGrid = () => {
             <div className="absolute inset-0 bg-black bg-opacity-50"></div>
             <motion.div
               className="text-left absolute inset-0 flex flex-col justify-center items-start p-6 z-10"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 14 }}
               animate={{
                 opacity: inView ? 1 : 0,
-                y: inView ? 0 : 20,
+                y: inView ? 0 : 14,
               }}
               transition={{
-                duration: 0.8,
-                ease: "easeInOut",
-                delay: index * 0.3,
+                duration: 0.68,
+                ease: [0.22, 1, 0.36, 1],
+                delay: index * 0.16,
               }}
             >
               <h3 className="text-lg font-proximanova-bold mb-3 text-[#f0f0f0] underline">
