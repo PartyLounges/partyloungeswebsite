@@ -166,6 +166,7 @@ const Footer = () => {
               Nemwel
             </a>
           </p>
+          © Party Lounges Ltd {new Date().getFullYear()}, All Rights Reserved.
         </motion.div>
       </div>
     </motion.footer>
