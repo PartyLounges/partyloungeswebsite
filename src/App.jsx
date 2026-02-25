@@ -1,4 +1,5 @@
-import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { MotionConfig } from "framer-motion";
 import "./index.css";
 import Home from "./Pages/Home";
@@ -14,6 +15,19 @@ import GalleryTypePage from "./Sections/Gallery/GalleryTypePage";
 import Catalogue from "./Pages/Catalogue";
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const tagId = import.meta.env.VITE_GTAG_ID;
+    if (!tagId || typeof window.gtag !== "function") return;
+
+    window.gtag("config", tagId, {
+      page_path: `${location.pathname}${location.search}`,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }, [location]);
+
   return (
     <MotionConfig
       reducedMotion="user"
