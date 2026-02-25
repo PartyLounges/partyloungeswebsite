@@ -9,7 +9,7 @@ const GetQuoteSection = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: 'easeOut' }}
     >
-      {/* Left Side: Contact Info */}
+      {/* Left Side: Contact hello */}
       <motion.div
         className="bg-theme-cream-brown p-6 rounded-lg lg:w-1/2 flex flex-col justify-center px-[5%] md:px-[8%] lg:px-[10%] py-4 border border-white"
         initial={{ opacity: 0, x: -50 }}
@@ -22,7 +22,7 @@ const GetQuoteSection = () => {
         </p>
         <ul className="text-base space-y-6">
           <li>
-            <span className="font-red-hat-display block font-semibold">0721424879 / 0734985910</span>
+            <span className="font-red-hat-display block font-semibold">0734985910 / 0718613655</span>
             <hr className="mt-2 border-t border-gray-400" />
           </li>
           <li>
@@ -34,10 +34,10 @@ const GetQuoteSection = () => {
           </li>
           <li>
             <a
-              href="mailto:info@partylounges.com"
+              href="mailto:hello@partylounges.com"
               className="text-black hover:underline font-red-hat-display"
             >
-              info@partylounges.com
+              hello@partylounges.com
             </a>
             <hr className="mt-2 border-t border-gray-400" />
           </li>

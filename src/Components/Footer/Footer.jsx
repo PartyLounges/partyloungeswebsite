@@ -106,7 +106,7 @@ const Footer = () => {
                 <span className="bg-white text-theme-brown p-3 rounded-full mr-3">
                   <i className="fa fa-phone text-lg"></i>
                 </span>
-                <span>0722 424879 / 0734 859190</span>
+                <span>0734985910 / 0718613655</span>
               </li>
               <li className="font-red-hat-display flex items-center text-sm sm:text-base md:text-lg">
                 <span className="bg-white text-theme-brown p-3 rounded-full mr-3">
@@ -118,7 +118,7 @@ const Footer = () => {
                 <span className="bg-white text-theme-brown p-3 rounded-full mr-3">
                   <i className="fa fa-envelope-o text-lg"></i>
                 </span>
-                <span>info@partylounges.com</span>
+                <span>hello@partylounges.com</span>
               </li>
             </ul>
           </motion.div>
@@ -154,7 +154,7 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 1.4 }}
         >
-          <p>© Party Lounges Ltd 2025, All Rights Reserved.</p>
+          <p>© Party Lounges Ltd {new Date().getFullYear()}, All Rights Reserved.</p>
           <p className="mt-2">
             Made with <span className="text-red-500">❤️</span> by 
             <a 
