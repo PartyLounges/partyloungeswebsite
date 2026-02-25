@@ -54,6 +54,7 @@ const MyCatalogue = () => {
         spaceBetween={50}
         slidesPerView={1}
         loop={true}
+        autoHeight={true}
         allowTouchMove={true}
         speed={850}
         className="w-full"
@@ -63,7 +64,7 @@ const MyCatalogue = () => {
         {catalogData.map((catalogue, catIndex) => (
           <SwiperSlide key={catIndex} className="w-full">
             <motion.div
-              className="mb-16"
+              className="mb-6"
               variants={imageVariants}
               custom={0}
               initial="hidden"

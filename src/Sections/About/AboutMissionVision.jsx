@@ -46,11 +46,21 @@ const AboutMissionVision = () => {
             <h2 className="text-xl md:text-2xl font-proximanova-bold text-black mb-4">
               Our Vision
             </h2>
-            <ul className="list-disc pl-5 text-black text-sm md:text-base font-red-hat-display">
-              <li>Creativity</li>
-              <li>Purpose</li>
-              <li>Innovation</li>
-              <li>Sustainability</li>
+            <ul className="space-y-3 text-black text-sm md:text-base font-red-hat-display">
+              {[
+                "Creativity",
+                "Purpose",
+                "Innovation",
+                "Sustainability",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="bg-white/80 rounded-md px-4 py-3 border border-gray-200 shadow-sm"
+                >
+                  <span className="font-proximanova-bold mr-2">•</span>
+                  {item}
+                </li>
+              ))}
             </ul>
           </motion.div>
           <motion.div variants={imageVariant}>

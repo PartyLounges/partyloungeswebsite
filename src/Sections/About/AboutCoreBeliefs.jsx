@@ -33,13 +33,13 @@ const AboutCoreBeliefs = () => {
       </div>
 
       {/* Core Beliefs List */}
-      <ul className="space-y-4 text-black text-sm md:text-base font-red-hat-display">
-        <li><strong>Creativity with Purpose</strong> – Every event tells a story, evokes emotions, and leaves a lasting impact..</li>
-        <li><strong>Innovation that Inspires</strong> – We push boundaries to deliver fresh, dynamic, and memorable event setups..</li>
-        <li><strong>Sustainability at the Core</strong> – Committed to eco-friendly solutions and waste reduction without compromising elegance.</li>
-        <li><strong>Excellence in Every Detail</strong> – Our meticulous attention ensures seamless, stress-free event experiences.</li>
-        <li><strong>Collaboration & Community</strong> – We value strong relationships with clients, vendors, and partners to bring visions to life.</li>
-        <li><strong>Transformative Experiences</strong> – Our goal is to create events that shift perspectives, inspire action, and forge lasting memories.</li>
+      <ul className="space-y-3 text-black text-sm md:text-base font-red-hat-display">
+        <li className="bg-white/80 rounded-md px-4 py-3 border border-gray-200 shadow-sm"><strong>Creativity with Purpose</strong> – Every event tells a story, evokes emotions, and leaves a lasting impact.</li>
+        <li className="bg-white/80 rounded-md px-4 py-3 border border-gray-200 shadow-sm"><strong>Innovation that Inspires</strong> – We push boundaries to deliver fresh, dynamic, and memorable event setups.</li>
+        <li className="bg-white/80 rounded-md px-4 py-3 border border-gray-200 shadow-sm"><strong>Sustainability at the Core</strong> – Committed to eco-friendly solutions and waste reduction without compromising elegance.</li>
+        <li className="bg-white/80 rounded-md px-4 py-3 border border-gray-200 shadow-sm"><strong>Excellence in Every Detail</strong> – Our meticulous attention ensures seamless, stress-free event experiences.</li>
+        <li className="bg-white/80 rounded-md px-4 py-3 border border-gray-200 shadow-sm"><strong>Collaboration & Community</strong> – We value strong relationships with clients, vendors, and partners to bring visions to life.</li>
+        <li className="bg-white/80 rounded-md px-4 py-3 border border-gray-200 shadow-sm"><strong>Transformative Experiences</strong> – Our goal is to create events that shift perspectives, inspire action, and forge lasting memories.</li>
       </ul>
     </motion.section>
   );

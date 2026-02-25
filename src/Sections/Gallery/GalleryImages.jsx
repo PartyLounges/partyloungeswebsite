@@ -130,7 +130,8 @@ const GalleryImages = () => {
               {/* Close Button */}
               <button
                 onClick={closePopup}
-                className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl font-bold"
+                className="absolute top-4 right-4 z-20 bg-black/75 text-white hover:bg-black p-2 rounded-full text-2xl leading-none font-bold shadow-md"
+                aria-label="Close image preview"
               >
                 &times;
               </button>
