@@ -72,16 +72,16 @@ const GalleryImages = () => {
             <motion.div
               key={image.id}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.6,
-                ease: "easeInOut",
-                delay: index * 0.2,
+                duration: 0.68,
+                ease: [0.22, 1, 0.36, 1],
+                delay: index * 0.08,
               }}
               whileHover={{
-                y: -5,
-                transition: { duration: 0.3, ease: "easeInOut" },
+                y: -4,
+                transition: { duration: 0.24, ease: [0.22, 1, 0.36, 1] },
               }}
               onClick={() => openPopup(index)}
             >
@@ -116,15 +116,16 @@ const GalleryImages = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
             onClick={closePopup} // Close the popup when the background is clicked
           >
             <motion.div
               className="relative rounded-lg overflow-hidden shadow-lg w-[90%] max-w-4xl"
               onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
-              initial={{ scale: 0.5, opacity: 0 }}
+              initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.5, opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              exit={{ scale: 0.96, opacity: 0 }}
+              transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
             >
               {/* Close Button */}
               <button
@@ -142,7 +143,7 @@ const GalleryImages = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               />
 
               {/* Navigation Buttons */}

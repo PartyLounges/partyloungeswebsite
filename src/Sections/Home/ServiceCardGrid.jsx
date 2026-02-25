@@ -43,24 +43,24 @@ const ServiceCardGrid = () => {
             key={index}
             ref={ref}
             className="relative bg-theme-white shadow-md rounded-lg overflow-hidden min-h-[300px]"
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{
               opacity: inView ? 1 : 0,
-              y: inView ? 0 : 50,
+              y: inView ? 0 : 24,
             }}
             transition={{
-              duration: 0.6,
-              ease: "easeInOut",
-              delay: index * 0.2,
+              duration: 0.65,
+              ease: [0.22, 1, 0.36, 1],
+              delay: index * 0.12,
               type: "spring",
-              stiffness: 300,
-              damping: 20,
+              stiffness: 170,
+              damping: 24,
             }}
             whileHover={{
-              y: -5,
+              y: -4,
               transition: {
-                duration: 0.3,
-                ease: "easeInOut",
+                duration: 0.25,
+                ease: [0.22, 1, 0.36, 1],
               },
             }}
           >
@@ -72,15 +72,15 @@ const ServiceCardGrid = () => {
             <div className="absolute inset-0 bg-black bg-opacity-50"></div>
             <motion.div
               className="text-left absolute inset-0 flex flex-col justify-center items-start p-6 z-10"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 14 }}
               animate={{
                 opacity: inView ? 1 : 0,
-                y: inView ? 0 : 20,
+                y: inView ? 0 : 14,
               }}
               transition={{
-                duration: 0.8,
-                ease: "easeInOut",
-                delay: index * 0.3,
+                duration: 0.68,
+                ease: [0.22, 1, 0.36, 1],
+                delay: index * 0.16,
               }}
             >
               <h3 className="text-lg font-proximanova-bold mb-3 text-[#f0f0f0] underline">

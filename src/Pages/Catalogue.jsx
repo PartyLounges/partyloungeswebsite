@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import MyCatalogue from "../Sections/Catalogues/MyCatalogues";
 
 const Catalogue = () => {

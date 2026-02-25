@@ -14,16 +14,24 @@ const MyCatalogue = () => {
 
   // Animation variants
   const textVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
+    hidden: { opacity: 0, y: 14 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.72, ease: [0.22, 1, 0.36, 1] },
+    },
   };
 
   const imageVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 18 },
     visible: (index) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut", delay: index * 0.2 },
+      transition: {
+        duration: 0.68,
+        ease: [0.22, 1, 0.36, 1],
+        delay: index * 0.08,
+      },
     }),
   };
 
@@ -33,6 +41,8 @@ const MyCatalogue = () => {
       <motion.h2
         className="text-center text-24 font-bold tablet:text-32 desktop:text-40 text-black font-red-hat-display mb-10"
         variants={textVariants}
+        initial="hidden"
+        animate="visible"
       >
         Our Event Furniture Collection
       </motion.h2>
@@ -44,13 +54,21 @@ const MyCatalogue = () => {
         spaceBetween={50}
         slidesPerView={1}
         loop={true}
-        allowTouchMove={false}
+        allowTouchMove={true}
+        speed={850}
         className="w-full"
+        aria-label={`Catalogue carousel - ${activeCatalogue}`}
         onSlideChange={(swiper) => setActiveCatalogue(catalogData[swiper.realIndex].catalogue_name)} // Update title
       >
         {catalogData.map((catalogue, catIndex) => (
           <SwiperSlide key={catIndex} className="w-full">
-            <motion.div className="mb-16">
+            <motion.div
+              className="mb-16"
+              variants={imageVariants}
+              custom={0}
+              initial="hidden"
+              animate="visible"
+            >
 
               {/* Featured Image */}
               <motion.div
@@ -75,6 +93,7 @@ const MyCatalogue = () => {
                     custom={index + 1}
                     initial="hidden"
                     animate="visible"
+                    whileHover={{ y: -4, transition: { duration: 0.24, ease: [0.22, 1, 0.36, 1] } }}
                   >
                     <img
                       src={image}
@@ -95,7 +114,7 @@ const MyCatalogue = () => {
           className="bg-theme-brown font-red-hat-display px-4 py-2 text-white rounded shadow-md border border-theme-brown 
                hover:bg-white hover:text-theme-brown focus:ring-2 focus:ring-offset-2 focus:ring-theme-brown transition-colors duration-200 
                flex items-center gap-2"
-            onClick={() => swiperRef.current?.slidePrev()} // Move left
+          onClick={() => swiperRef.current?.slidePrev()} // Move left
         >
           <FaArrowLeft /> Previous
         </button>
@@ -103,9 +122,9 @@ const MyCatalogue = () => {
           className="bg-theme-brown font-red-hat-display px-4 py-2 text-white rounded shadow-md border border-theme-brown 
                hover:bg-white hover:text-theme-brown focus:ring-2 focus:ring-offset-2 focus:ring-theme-brown transition-colors duration-200 
                flex items-center gap-2"
-            onClick={() => swiperRef.current?.slideNext()} // Move right
-          >
-            Next <FaArrowRight />
+          onClick={() => swiperRef.current?.slideNext()} // Move right
+        >
+          Next <FaArrowRight />
         </button>
       </div>
 

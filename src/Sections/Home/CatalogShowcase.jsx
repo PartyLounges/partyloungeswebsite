@@ -16,16 +16,24 @@ const CatalogShowcase = () => {
 
   // Animation variants
   const textVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
+    hidden: { opacity: 0, y: 14 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.72, ease: [0.22, 1, 0.36, 1] },
+    },
   };
 
   const imageVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 18 },
     visible: (index) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut", delay: index * 0.2 },
+      transition: {
+        duration: 0.68,
+        ease: [0.22, 1, 0.36, 1],
+        delay: index * 0.08,
+      },
     }),
   };
 

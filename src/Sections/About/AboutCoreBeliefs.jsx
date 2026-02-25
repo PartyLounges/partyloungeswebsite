@@ -6,7 +6,7 @@ const AboutCoreBeliefs = () => {
       className="w-full bg-aboutExperience-theme py-16 px-6 md:px-12 lg:px-20"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.66, ease: [0.22, 1, 0.36, 1] }}
     >
       {/* Title */}
       <h2 className="text-center text-40 font-bold tablet:text-48 desktop:text-56 font-proximanova-bold mb-8">
@@ -20,9 +20,9 @@ const AboutCoreBeliefs = () => {
           src="https://images.unsplash.com/photo-1560184897-0e5d96d86acd?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8UnVzdGljJTIwRnVybml0dXJlfGVufDB8fDB8fHww"
           alt="What Sets Us Apart"
           className="w-48 h-32 md:w-64 md:h-40 rounded-lg shadow-lg"
-          initial={{ scale: 0.9 }}
+          initial={{ scale: 0.95 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
         />
         
         {/* Text */}

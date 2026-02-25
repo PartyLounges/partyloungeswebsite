@@ -6,10 +6,10 @@ const IntroSection = () => {
   return (
     <motion.div
       className="relative w-full bg-theme-brown overflow-hidden mb-8"
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -50 }}
-      transition={{ duration: 0.8, ease: "easeInOut" }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="mx-4 md:mx-8 lg:mx-12 py-12 md:py-16">
         <div className="max-w-6xl mx-auto px-5 md:px-8 lg:px-10">
@@ -33,8 +33,9 @@ const IntroSection = () => {
             <Link to="/about">
               <motion.button
                 className="px-6 py-3 bg-white text-theme-brown font-red-hat-display rounded-lg hover:bg-theme-brown hover:text-white border border-white transition"
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
               >
                 Learn More
               </motion.button>

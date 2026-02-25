@@ -14,16 +14,16 @@ const Footer = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}  
       viewport={{ once: true }} 
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="container mx-auto px-4 lg:px-16">
         {/* Logo Section */}
         <motion.div
           className="block text-center mb-8"
-          initial={{ opacity: 0, y: -30 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }} 
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
         >
           <img
             src={partyloungesLogo}
@@ -38,15 +38,15 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}  
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.4 }}
+          transition={{ duration: 0.7, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* About Us */}
           <motion.div
             className="space-y-4"
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -18 }}
             whileInView={{ opacity: 1, x: 0 }}  
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.6 }}
+            transition={{ duration: 0.7, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
           >
             <h2 className="text-lg sm:text-xl md:text-2xl font-proximanova-bold">About Us</h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed font-red-hat-display">
@@ -60,21 +60,21 @@ const Footer = () => {
           {/* Quick Links */}
           <motion.div
             className="space-y-4"
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 18 }}
             whileInView={{ opacity: 1, x: 0 }}  
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.8 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
             <h3 className="text-lg sm:text-xl md:text-2xl font-proximanova-bold">Quick Links</h3>
             <ul className="space-y-2">
-              {navLinks.map((item) => {
+              {navLinks.map((item, index) => {
                 const isActive = location.pathname === `/${item.toLowerCase()}` || (item === "Home" && location.pathname === "/");
                 return (
                   <motion.li
                     key={item}
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0, x: 12 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 }}
+                    transition={{ delay: index * 0.05, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                   >
                     <Link
                       to={`/${item.toLowerCase()}`}
@@ -95,10 +95,10 @@ const Footer = () => {
           {/* Contact Info */}
           <motion.div
             className="space-y-4"
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -18 }}
             whileInView={{ opacity: 1, x: 0 }}  
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 1 }}
+            transition={{ duration: 0.7, delay: 0.36, ease: [0.22, 1, 0.36, 1] }}
           >
             <h3 className="text-lg sm:text-xl md:text-2xl font-proximanova-bold">Contact Info</h3>
             <ul className="space-y-4">
@@ -130,7 +130,7 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}  
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 1.2 }}
+          transition={{ duration: 0.65, delay: 0.42, ease: [0.22, 1, 0.36, 1] }}
         >
           <a href="#" className="text-white hover:text-theme-brown hover:bg-white p-3 rounded-full transition text-lg sm:text-xl md:text-2xl">
             <i className="fa fa-twitter"></i>
@@ -152,7 +152,7 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}  
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 1.4 }}
+          transition={{ duration: 0.65, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <p>© Party Lounges Ltd {new Date().getFullYear()}, All Rights Reserved.</p>
           <p className="mt-2">

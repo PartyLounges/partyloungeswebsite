@@ -44,8 +44,8 @@ const Slider = () => {
         spaceBetween={0}
         slidesPerView={1}
         loop={true}
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
-        speed={1200}
+        autoplay={{ delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+        speed={1300}
         effect="fade"
         className="w-full h-[100vh] md:h-[100vh] lg:h-[100vh] pb-40"
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
@@ -64,9 +64,9 @@ const Slider = () => {
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-black/40">
                 <motion.h2
                   className="text-white text-24 tablet:text-32 desktop:text-40 font-proximanova-bold py-6"
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 18 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, ease: "easeOut" }}
+                  transition={{ duration: 0.82, ease: [0.22, 1, 0.36, 1] }}
                 >
                   {slide.title} <br />
                   <span className="text-white text-40 font-bold tablet:text-48 desktop:text-56 font-proximanova-bold">
@@ -77,7 +77,7 @@ const Slider = () => {
                   className="text-white text-24 tablet:text-32 desktop:text-40 font-proximanova-bold mt-2 max-w-[90%] md:max-w-[80%] lg:max-w-[80%] mx-auto"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.3 }}
+                  transition={{ duration: 0.72, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <span>{slide.description} </span>
                   <Link

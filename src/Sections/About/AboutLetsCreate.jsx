@@ -1,13 +1,21 @@
 import { motion } from "framer-motion";
 
 const containerVariant = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+  hidden: { opacity: 0, y: 14 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.68, ease: [0.22, 1, 0.36, 1] },
+  }
 };
 
 const textVariant = {
-  hidden: { opacity: 0, x: -20 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } }
+  hidden: { opacity: 0, x: -14 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.66, ease: [0.22, 1, 0.36, 1] },
+  }
 };
 
 function AboutLetsCreate() {

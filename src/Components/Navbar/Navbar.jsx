@@ -32,15 +32,15 @@ const Navbar = () => {
       }`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="flex items-center justify-between px-4 md:px-8 lg:px-12 py-3">
         {/* Logo */}
         <motion.div
           className="block md:hidden"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          initial={{ scale: 0.88, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <img
             src={partyloungesLogo}
@@ -51,9 +51,9 @@ const Navbar = () => {
 
         <motion.div
           className="hidden md:block"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          initial={{ scale: 0.88, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <img
             src={partyloungesLogo}
@@ -106,12 +106,12 @@ const Navbar = () => {
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
             className="fixed top-0 right-0 w-40 bg-theme-brown z-40 overflow-hidden"
             style={{ maxHeight: "50vh", paddingTop: "1.5rem", paddingBottom: "1.5rem" }}
           >
             <ul className="flex flex-col items-start space-y-4 p-4">
-              {navLinks.map((item) => {
+              {navLinks.map((item, index) => {
                 const isActive =
                   location.pathname === `/${item.toLowerCase()}` ||
                   (item === "Home" && location.pathname === "/");
@@ -119,9 +119,9 @@ const Navbar = () => {
                 return (
                   <motion.li
                     key={item}
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0, x: 14 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 }}
+                    transition={{ delay: index * 0.06, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                   >
                     <Link
                       to={`/${item.toLowerCase()}`}

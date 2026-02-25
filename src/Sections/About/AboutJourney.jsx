@@ -7,16 +7,16 @@ const AboutJourney = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { delayChildren: 0.2, staggerChildren: 0.2 },
+      transition: { delayChildren: 0.12, staggerChildren: 0.12 },
     },
   };
 
   const textVariant = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 14 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.68, ease: [0.22, 1, 0.36, 1] },
     },
   };
 

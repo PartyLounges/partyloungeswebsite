@@ -14,51 +14,51 @@ const Home = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
+      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
     >
       <motion.div
-        initial={{ opacity: 0, y: -50 }}
+        initial={{ opacity: 0, y: -24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
         {/* <HeroSection /> */}
         <Slider />
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, y: -50 }}
+        initial={{ opacity: 0, y: -24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
         <IntroSection />
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, y: -50 }}
+        initial={{ opacity: 0, y: -24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
         <CatalogShowcase />
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
         <ServiceCardGrid />
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
         <BlogSection />
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
         <InstagramProfile />
       </motion.div>

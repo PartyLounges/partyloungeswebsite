@@ -5,19 +5,19 @@ import ourstorymision from "../../assets/images/About/ourstorymision.jpg"
 
 const AboutMissionVision = () => {
   const textVariant = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 14 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.66, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
   const imageVariant = {
-    hidden: { opacity: 0, scale: 0.9 },
+    hidden: { opacity: 0, scale: 0.95 },
     visible: {
       opacity: 1, scale: 1,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.72, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
@@ -25,7 +25,7 @@ const AboutMissionVision = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { delayChildren: 0.2, staggerChildren: 0.2 },
+      transition: { delayChildren: 0.12, staggerChildren: 0.12 },
     },
   };
 

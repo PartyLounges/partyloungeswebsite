@@ -9,21 +9,21 @@ const AboutUsTopSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        duration: 1.2, // Duration of the animation
-        ease: "easeInOut", // Easing function
+        duration: 0.9, // Duration of the animation
+        ease: [0.22, 1, 0.36, 1], // Easing function
       },
     },
   };
 
   const textVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 18 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1, // Duration of text animation
-        ease: "easeOut", // Easing function
-        delay: 0.3, // Delay to start after the container animation
+        duration: 0.72, // Duration of text animation
+        ease: [0.22, 1, 0.36, 1], // Easing function
+        delay: 0.2, // Delay to start after the container animation
       },
     },
   };
