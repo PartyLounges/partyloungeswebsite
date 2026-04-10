@@ -63,6 +63,26 @@ const GetQuoteSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
         >
+          {/* Names Field */}
+          <div>
+            <input
+              type="text"
+              id="names"
+              placeholder="Names"
+              className="font-red-hat-display w-full px-4 py-3 rounded border border-white text-white bg-theme-brown focus:outline-none focus:ring-2 focus:ring-white focus:border-white placeholder-white"
+            />
+          </div>
+
+          {/* Contact Number Field */}
+          <div>
+            <input
+              type="tel"
+              id="contact-number"
+              placeholder="Contact number"
+              className="font-red-hat-display w-full px-4 py-3 rounded border border-white text-white bg-theme-brown focus:outline-none focus:ring-2 focus:ring-white focus:border-white placeholder-white"
+            />
+          </div>
+
           {/* Date Field */}
           <div>
             <input
