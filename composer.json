@@ -1,0 +1,8 @@
+{
+  "name": "partyloungeswebsite/contact-mailer",
+  "description": "Composer dependencies for PHP contact email endpoint",
+  "type": "project",
+  "require": {
+    "phpmailer/phpmailer": "^7.0"
+  }
+}
