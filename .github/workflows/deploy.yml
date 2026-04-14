@@ -24,12 +24,37 @@ jobs:
       - name: Build Vite app
         run: npm run build
 
+      - name: Validate cPanel deploy secrets
+        env:
+          CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
+          CPANEL_USER: ${{ secrets.CPANEL_USER }}
+          CPANEL_PORT: ${{ secrets.CPANEL_PORT }}
+          CPANEL_SSH_KEY: ${{ secrets.CPANEL_SSH_KEY }}
+          CPANEL_PASSWORD: ${{ secrets.CPANEL_PASSWORD }}
+        run: |
+          missing=()
+
+          [[ -z "$CPANEL_HOST" ]] && missing+=("CPANEL_HOST")
+          [[ -z "$CPANEL_USER" ]] && missing+=("CPANEL_USER")
+          [[ -z "$CPANEL_PORT" ]] && missing+=("CPANEL_PORT")
+
+          if [[ -z "$CPANEL_SSH_KEY" && -z "$CPANEL_PASSWORD" ]]; then
+            missing+=("CPANEL_SSH_KEY or CPANEL_PASSWORD")
+          fi
+
+          if (( ${#missing[@]} > 0 )); then
+            echo "Missing required GitHub Actions secret(s): ${missing[*]}"
+            echo "Go to Settings -> Secrets and variables -> Actions and add them."
+            exit 1
+          fi
+
       - name: Deploy dist to cPanel
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.CPANEL_HOST }}
           username: ${{ secrets.CPANEL_USER }}
           key: ${{ secrets.CPANEL_SSH_KEY }}
+          password: ${{ secrets.CPANEL_PASSWORD }}
           port: ${{ secrets.CPANEL_PORT }}
           source: "dist/*"
           target: "/home/${{ secrets.CPANEL_USER }}/public_html/"
