@@ -24,31 +24,18 @@ jobs:
       - name: Build Vite app
         run: npm run build
 
-      - name: Validate cPanel deploy secrets
-        env:
-          CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
-          CPANEL_USER: ${{ secrets.CPANEL_USER }}
-          CPANEL_PORT: ${{ secrets.CPANEL_PORT }}
-          CPANEL_SSH_KEY: ${{ secrets.CPANEL_SSH_KEY }}
-          CPANEL_PASSWORD: ${{ secrets.CPANEL_PASSWORD }}
-        run: |
-          missing=()
+      # ✅ INSTALL PHP DEPENDENCIES
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer
 
-          [[ -z "$CPANEL_HOST" ]] && missing+=("CPANEL_HOST")
-          [[ -z "$CPANEL_USER" ]] && missing+=("CPANEL_USER")
-          [[ -z "$CPANEL_PORT" ]] && missing+=("CPANEL_PORT")
+      - name: Install Composer dependencies
+        run: composer install --no-dev --optimize-autoloader
 
-          if [[ -z "$CPANEL_SSH_KEY" && -z "$CPANEL_PASSWORD" ]]; then
-            missing+=("CPANEL_SSH_KEY or CPANEL_PASSWORD")
-          fi
-
-          if (( ${#missing[@]} > 0 )); then
-            echo "Missing required GitHub Actions secret(s): ${missing[*]}"
-            echo "Go to Settings -> Secrets and variables -> Actions and add them."
-            exit 1
-          fi
-
-      - name: Deploy dist to cPanel
+      # ✅ DEPLOY FRONTEND
+      - name: Deploy dist
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.CPANEL_HOST }}
@@ -58,3 +45,15 @@ jobs:
           port: ${{ secrets.CPANEL_PORT }}
           source: "dist/*"
           target: "/home/${{ secrets.CPANEL_USER }}/public_html/"
+
+      # ✅ DEPLOY PHP DEPENDENCIES
+      - name: Deploy vendor
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.CPANEL_HOST }}
+          username: ${{ secrets.CPANEL_USER }}
+          key: ${{ secrets.CPANEL_SSH_KEY }}
+          password: ${{ secrets.CPANEL_PASSWORD }}
+          port: ${{ secrets.CPANEL_PORT }}
+          source: "vendor/*"
+          target: "/home/${{ secrets.CPANEL_USER }}/public_html/vendor/"

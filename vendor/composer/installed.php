@@ -3,7 +3,7 @@
         'name' => 'partyloungeswebsite/contact-mailer',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '188fbfe8f5d902dd6dc37fe3d245d722cb4314f7',
+        'reference' => '70c8f88e88a8c5f455d761e25c66a7f79f1d441d',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'partyloungeswebsite/contact-mailer' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '188fbfe8f5d902dd6dc37fe3d245d722cb4314f7',
+            'reference' => '70c8f88e88a8c5f455d761e25c66a7f79f1d441d',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

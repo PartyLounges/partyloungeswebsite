@@ -1,4 +1,8 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 header('Content-Type: application/json');
 
 $requestId = bin2hex(random_bytes(8));
@@ -14,6 +18,7 @@ if (in_array($origin, $allowedOrigins, true)) {
     header("Access-Control-Allow-Origin: $origin");
     header('Vary: Origin');
 }
+
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
@@ -22,24 +27,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-$composerAutoload = dirname(__DIR__) . '/vendor/autoload.php';
+/**
+ * ✅ FIXED AUTOLOAD PATH
+ */
+require __DIR__ . '/vendor/autoload.php';
 
-if (!file_exists($composerAutoload)) {
-    error_log("[quote-form][$requestId] Composer autoload not found");
+/**
+ * ✅ SMTP CONFIG (use your app password)
+ */
+$smtpUser = 'hello@partylounges.com';
+$smtpPass = 'P902cf2PpG7A';
+
+/**
+ * ❌ DO NOT DEPLOY WITH PLACEHOLDER
+ */
+if ($smtpPass === 'PUT_YOUR_APP_PASSWORD_HERE') {
     http_response_code(500);
     echo json_encode([
         'status' => 'error',
-        'message' => 'Mailer dependency missing. Run composer install and deploy the vendor folder.',
+        'message' => 'SMTP password not configured',
         'request_id' => $requestId
     ]);
     exit;
 }
 
-require $composerAutoload;
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
+/**
+ * ✅ PARSE INPUT
+ */
 $input = json_decode(file_get_contents('php://input'), true) ?? [];
 
 $name = trim($input['name'] ?? '');
@@ -51,7 +65,6 @@ $venue = trim($input['venue'] ?? '');
 $seating = trim($input['seating'] ?? '');
 
 if ($name === '' || $phone === '') {
-    error_log("[quote-form][$requestId] Validation failed: missing name or phone");
     http_response_code(400);
     echo json_encode([
         'status' => 'error',
@@ -61,27 +74,10 @@ if ($name === '' || $phone === '') {
     exit;
 }
 
-$smtpUser = getenv('ZOHO_SMTP_USER') ?: 'hello@partylounges.com';
-$smtpPass = getenv('ZOHO_SMTP_PASSWORD') ?: 'PUT_ZOHO_APP_PASSWORD_HERE';
-
-if ($smtpPass === 'PUT_ZOHO_APP_PASSWORD_HERE') {
-    error_log("[quote-form][$requestId] SMTP password not configured");
-    http_response_code(500);
-    echo json_encode([
-        'status' => 'error',
-        'message' => 'SMTP password is not configured on the server',
-        'request_id' => $requestId
-    ]);
-    exit;
-}
-
-$safeName = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
-$safePhone = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
-$safeDate = htmlspecialchars($date, ENT_QUOTES, 'UTF-8');
-$safePax = htmlspecialchars($pax, ENT_QUOTES, 'UTF-8');
-$safeLook = htmlspecialchars($look, ENT_QUOTES, 'UTF-8');
-$safeVenue = htmlspecialchars($venue, ENT_QUOTES, 'UTF-8');
-$safeSeating = htmlspecialchars($seating, ENT_QUOTES, 'UTF-8');
+/**
+ * ✅ SANITIZE
+ */
+$esc = fn($v) => htmlspecialchars($v, ENT_QUOTES, 'UTF-8');
 
 $mail = new PHPMailer(true);
 
@@ -93,51 +89,40 @@ try {
     $mail->Password = $smtpPass;
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = 465;
-    $mail->CharSet = 'UTF-8';
 
     $mail->setFrom($smtpUser, 'Party Lounges Website');
-    $mail->addAddress($smtpUser);
+
+    /**
+     * ✅ EXPLICIT RECIPIENT
+     */
+    $mail->addAddress('hello@partylounges.com');
 
     $mail->Subject = "New Quote Request from {$name}";
     $mail->isHTML(true);
 
     $mail->Body = "
-<h2>New Quote Request</h2>
-<p><strong>Name:</strong> {$safeName}</p>
-<p><strong>Phone:</strong> {$safePhone}</p>
-<p><strong>Date:</strong> {$safeDate}</p>
-<p><strong>Number of Pax:</strong> {$safePax}</p>
-<p><strong>Look &amp; Feel:</strong> {$safeLook}</p>
-<p><strong>Venue:</strong> {$safeVenue}</p>
-<p><strong>Seating Style:</strong> {$safeSeating}</p>
-";
-
-    $mail->AltBody = "
-New Quote Request
-Name: {$name}
-Phone: {$phone}
-Date: {$date}
-Number of Pax: {$pax}
-Look & Feel: {$look}
-Venue: {$venue}
-Seating Style: {$seating}
-";
+        <h2>New Quote Request</h2>
+        <p><strong>Name:</strong> {$esc($name)}</p>
+        <p><strong>Phone:</strong> {$esc($phone)}</p>
+        <p><strong>Date:</strong> {$esc($date)}</p>
+        <p><strong>Pax:</strong> {$esc($pax)}</p>
+        <p><strong>Look:</strong> {$esc($look)}</p>
+        <p><strong>Venue:</strong> {$esc($venue)}</p>
+        <p><strong>Seating:</strong> {$esc($seating)}</p>
+    ";
 
     $mail->send();
 
-    error_log("[quote-form][$requestId] Email sent successfully for {$phone}");
     echo json_encode([
         'status' => 'success',
-        'request_id' => $requestId,
-        'message' => 'Request received successfully. Our team will call you back soon.'
+        'request_id' => $requestId
     ]);
+
 } catch (Exception $e) {
-    error_log("[quote-form][$requestId] Email sending failed: {$mail->ErrorInfo}");
     http_response_code(500);
     echo json_encode([
         'status' => 'error',
-        'message' => 'Email sending failed',
-        'debug' => $mail->ErrorInfo,
+        'message' => $mail->ErrorInfo,
         'request_id' => $requestId
     ]);
 }
